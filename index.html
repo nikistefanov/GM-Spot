@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Games and movies spot</title>
+    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css"/>
+    <link rel="stylesheet" href="/css/site.css">
+    <script src="/bower_components/toastr/toastr.js"></script>
+    <script src="https://www.parsecdn.com/js/parse-1.6.12.min.js"></script>
+  </head>
+  <body>
+    <div id="wrapper" class="container">
+      <header id="header" class="row">
+        <div class="col-md-4">
+          <h1 id="logo">GM <span>Spot</span></h1>
+        </div>
+        <div class="col-md-8 user-nav">
+          
+        </div>
+      </header>
+      <nav id="nav" class="navbar navbar-default row">
+        <div class="container-fluid col-md-12">
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand active" href="#/home"><i class="glyphicon glyphicon-home"></i> <span class="sr-only">(current)</span></a>
+          </div>
+          <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav">
+              <li><a href="#/games">Games</a></li>
+              <li><a href="#/movies">Movies</a></li>
+              <li><a href="#/books">Books</a></li>
+            </ul>
+            <form class="navbar-form navbar-right" role="search">
+    				<div class="form-group">
+    					<input type="search" class="form-control" placeholder="Search" />
+    					<i class="glyphicon glyphicon-search"></i>
+    				</div>
+    			</form>
+          </div>
+        </div>
+      </nav>
+      <div id="main">
+        <div id="products">
+          
+        </div>
+      </div>
+      <footer id="footer" class="row">
+        <div class="col-md-8">
+          <ul class="my-nav">
+            <li><a href="#">About us</a></li>
+            <li><a href="#">Contacts</a></li>
+          </ul>
+        </div>
+        <p class="col-md-4 copy">&copy; GM-Spot</p>
+      </footer>
+    </div>
+    <script src="bower_components/system.js/dist/system.js"></script>
+    <script src="node_modules/babel-core/browser.js"></script>
+    <script type="text/babel">
+      System.config({
+          baseURL: '/app',
+          transpiler: 'babel',
+          map: {
+              babel: '/node_modules/babel-core/browser.js',
+              sammy: '/bower_components/sammy/lib/sammy.js',
+              jquery: '/bower_components/jquery/dist/jquery.js',
+              bootstrapUI: '/bower_components/bootstrap/dist/js/bootstrap.js',
+              handlebars: '/bower_components/handlebars/handlebars.js'
+              //toastr: '/bower_components/toastr/toastr.js'
+          }
+      });
+
+      System.import('app.js');
+    </script>
+  </body>
+</html>

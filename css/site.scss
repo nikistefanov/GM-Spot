@@ -1,6 +1,9 @@
-$light: rgb(69, 122, 134);
-$dark: rgb(47, 83, 91);
+$light: rgb(153, 100, 67);
+$light-gray: rgb(153, 146, 129);
+$dark-gray: rgb(140, 134, 118);
+$brown: rgb(69, 41, 23);
 $more-dark: rgb(33, 57, 69);
+$custom-font-family: "Myriad Pro";
 
 %reset {
 	margin: 0;
@@ -14,13 +17,15 @@ $more-dark: rgb(33, 57, 69);
 
 body {
 	@extend %reset;
+	font-size: 14px;
+	font-family:$custom-font-family, sans-serif;
 }
 
 #footer {
 	@extend %padding;
 	margin-top: .5em;
 	color: #fff;
-	background: $dark;
+	background: $light-gray;
 
 	a {
 		color: inherit;
@@ -48,12 +53,13 @@ body {
 
 #header {
 	@extend %padding;
-	background: black;
+	background: $brown;
 	color: #ffffff;
 
 	#logo {
 		margin: 0;
 		font: inherit;
+		font-size: 2.3em;
 		font-weight: bold;
 		text-transform: uppercase;
 
@@ -67,7 +73,7 @@ body {
 			width: 1em;
 			height: 1em;
 			border-radius: 100%;
-			border: 3px solid $dark;
+			border: 3px solid $light-gray;
 			position: relative;
 			top: 1px;
 		}
@@ -88,7 +94,7 @@ body {
 
 			&:hover {
 				text-decoration: none;
-				
+
 			}
 		}
 
@@ -96,7 +102,7 @@ body {
 
 			&:hover {
 				border-radius: 3px;
-				background-color: rgba($dark, .6);
+				background-color: rgba($light-gray, .6);
 			}
 		}
 
@@ -108,13 +114,13 @@ body {
 
 #nav {
 	color: white;
-	background: $dark;
+	background: $light-gray;
 	border-radius: 0;
 	border: 0;
 	margin-bottom: 0;
 
 	ul {
-		background: $dark;
+		background: $light-gray;
 	}
 
 	a {
@@ -129,7 +135,7 @@ body {
 
 			&:hover {
 				border-radius: 3px;
-				background-color: rgba($more-dark, .8);
+				background-color: $dark-gray;
 			}
 		}
 
@@ -151,7 +157,7 @@ body {
 }
 
 #carousel {
-	background: black;
+	background: $brown;
 	height: 300px;
 
 	&:before {
@@ -159,16 +165,16 @@ body {
 	}
 
 	> .slide {
-		//background: black url("../img/kratko.jpg") no-repeat;
+		//background: url("../images/sliding-image-1.jpg") no-repeat;
 		background-size: 100% 100%;
-		height: 300px;
+		height: 250px;
 		float: none;
 	}
 }
 
 .home-page {
 	#nav {
-		background: rgba( $dark, .5 );
+		background: rgba( $light-gray, .5 );
 		position: relative;
 		z-index: 2;
 	}
@@ -191,18 +197,50 @@ body {
 .promo-gallery {
 	margin-top: 50px;
 
-	> section {
-		height: 200px;
-		text-align: center;
-		position: relative;
-		//background: black url("../img/kratko.jpg") no-repeat;
-		background-size: cover;
-		background-clip: content-box;
+	 .inner-elemets {
+		// height: 200px;
+		// text-align: center;
+		// position: relative;
+		// background: black url("../images/games.jpg") no-repeat;
+		// background-size: cover;
+		// background-clip: content-box;
 
-		> div {
-			position: absolute;
-			width: 100%;
-			bottom: 1em;
-		}
+			#games-section {
+				height: 200px;
+				text-align: center;
+				position: relative;
+				//background: url("../images/games.jpg") no-repeat;
+				background: url("http://www.pulsar.bg/image/cache/data/Banners/Christmas-Sale-Season-website-small-banner-375x130.jpg") no-repeat;
+				background-clip: content-box;
+				background-size:     contain;
+    		background-position: center center;
+			}
+
+			#movies-section {
+				height: 200px;
+				text-align: center;
+				position: relative;
+				background: url("../images/movies.jpg") no-repeat;
+				background-clip: content-box;
+				background-size:     contain;
+    		background-position: center center;
+			}
+
+			#books-section {
+				height: 200px;
+				text-align: center;
+				position: relative;
+				background: url("../images/books.jpg") no-repeat;
+				background-clip: content-box;
+				background-size:     contain;
+    		background-position: center center;
+			}
+
+			a {
+		 	 position: absolute;
+			 margin: auto;
+		 	 width: 50%;
+		 	 bottom: 1em;
+		  }
 	}
 }

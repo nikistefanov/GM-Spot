@@ -7,10 +7,14 @@ body, .my-nav {
   padding-top: .5em;
   padding-bottom: .5em; }
 
+body {
+  font-size: 14px;
+  font-family: "Myriad Pro", sans-serif; }
+
 #footer {
   margin-top: .5em;
   color: #fff;
-  background: #2f535b; }
+  background: #999281; }
   #footer a {
     color: inherit;
     background: none; }
@@ -26,11 +30,12 @@ body, .my-nav {
     text-align: right; }
 
 #header {
-  background: black;
+  background: #452917;
   color: #ffffff; }
   #header #logo {
     margin: 0;
     font: inherit;
+    font-size: 2.3em;
     font-weight: bold;
     text-transform: uppercase; }
     #header #logo span {
@@ -42,7 +47,7 @@ body, .my-nav {
       width: 1em;
       height: 1em;
       border-radius: 100%;
-      border: 3px solid #2f535b;
+      border: 3px solid #999281;
       position: relative;
       top: 1px; }
   #header .user-nav {
@@ -52,30 +57,30 @@ body, .my-nav {
     #header .my-nav li + li {
       margin-left: 10px; }
     #header .my-nav a {
-      color: #457a86; }
+      color: #996443; }
       #header .my-nav a:hover {
         text-decoration: none; }
     #header .my-nav li:hover {
       border-radius: 3px;
-      background-color: rgba(47, 83, 91, 0.6); }
+      background-color: rgba(153, 146, 129, 0.6); }
     #header .my-nav .badge {
       opacity: .8; }
 
 #nav {
   color: white;
-  background: #2f535b;
+  background: #999281;
   border-radius: 0;
   border: 0;
   margin-bottom: 0; }
   #nav ul {
-    background: #2f535b; }
+    background: #999281; }
   #nav a {
     color: inherit; }
     #nav a:hover {
       text-decoration: none; }
   #nav li:hover, #nav .navbar-brand:hover {
     border-radius: 3px;
-    background-color: rgba(33, 57, 69, 0.8); }
+    background-color: #8c8676; }
   #nav .form-group {
     position: relative; }
     #nav .form-group > .glyphicon {
@@ -86,20 +91,20 @@ body, .my-nav {
     box-shadow: none;
     border: 0;
     color: white;
-    background: #457a86; }
+    background: #996443; }
 
 #carousel {
-  background: black;
+  background: #452917;
   height: 300px; }
   #carousel:before {
     display: none; }
   #carousel > .slide {
     background-size: 100% 100%;
-    height: 300px;
+    height: 250px;
     float: none; }
 
 .home-page #nav {
-  background: rgba(47, 83, 91, 0.5);
+  background: rgba(153, 146, 129, 0.5);
   position: relative;
   z-index: 2; }
 .home-page #nav + #carousel {
@@ -113,15 +118,34 @@ body, .my-nav {
 
 .promo-gallery {
   margin-top: 50px; }
-  .promo-gallery > section {
+  .promo-gallery .inner-elemets #games-section {
     height: 200px;
     text-align: center;
     position: relative;
-    background-size: cover;
-    background-clip: content-box; }
-    .promo-gallery > section > div {
-      position: absolute;
-      width: 100%;
-      bottom: 1em; }
+    background: url("http://www.pulsar.bg/image/cache/data/Banners/Christmas-Sale-Season-website-small-banner-375x130.jpg") no-repeat;
+    background-clip: content-box;
+    background-size: contain;
+    background-position: center center; }
+  .promo-gallery .inner-elemets #movies-section {
+    height: 200px;
+    text-align: center;
+    position: relative;
+    background: url("../images/movies.jpg") no-repeat;
+    background-clip: content-box;
+    background-size: contain;
+    background-position: center center; }
+  .promo-gallery .inner-elemets #books-section {
+    height: 200px;
+    text-align: center;
+    position: relative;
+    background: url("../images/books.jpg") no-repeat;
+    background-clip: content-box;
+    background-size: contain;
+    background-position: center center; }
+  .promo-gallery .inner-elemets a {
+    position: absolute;
+    margin: auto;
+    width: 50%;
+    bottom: 1em; }
 
 /*# sourceMappingURL=site.css.map */

@@ -18,3 +18,8 @@ thi is to skip cross origin
 - pc
 - nintendo
 - vintage
+
+
+## da se izmisli po dobar nachin za background na trite sections v home page
+## hover na item v navbar-a - da e po maluk height
+## da se centrirat butonite

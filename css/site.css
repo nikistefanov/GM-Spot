@@ -8,7 +8,7 @@ body, .my-nav {
   padding-bottom: .5em; }
 
 body {
-  font-size: 14px;
+  font-size: 12px;
   font-family: "Myriad Pro", sans-serif; }
 
 #footer {
@@ -30,17 +30,13 @@ body {
     text-align: right; }
 
 #header {
-  background: #452917;
   color: #ffffff; }
   #header #logo {
     margin: 0;
     font: inherit;
-    font-size: 2.3em;
-    font-weight: bold;
-    text-transform: uppercase; }
-    #header #logo span {
-      font-weight: normal; }
-    #header #logo span:before {
+    font-size: 2.7em;
+    text-transform: lowercase; }
+    #header #logo p:before {
       content: "";
       margin: 0 5px 0 0;
       display: inline-block;
@@ -57,7 +53,7 @@ body {
     #header .my-nav li + li {
       margin-left: 10px; }
     #header .my-nav a {
-      color: #996443; }
+      color: white; }
       #header .my-nav a:hover {
         text-decoration: none; }
     #header .my-nav li:hover {
@@ -69,6 +65,7 @@ body {
 #nav {
   color: white;
   background: #999281;
+  margin-left: 15.7%;
   border-radius: 0;
   border: 0;
   margin-bottom: 0; }
@@ -78,9 +75,16 @@ body {
     color: inherit; }
     #nav a:hover {
       text-decoration: none; }
-  #nav li:hover, #nav .navbar-brand:hover {
-    border-radius: 3px;
-    background-color: #8c8676; }
+  #nav li, #nav .navbar-brand {
+    text-transform: uppercase; }
+    #nav li:hover, #nav .navbar-brand:hover {
+      font-style: italic;
+      color: #eeeeba;
+      border-radius: 3px;
+      background-color: #8c8676; }
+  #nav p:hover {
+    font-style: bold;
+    color: inherit; }
   #nav .form-group {
     position: relative; }
     #nav .form-group > .glyphicon {
@@ -93,9 +97,25 @@ body {
     color: white;
     background: #996443; }
 
+#site-slogan {
+  color: white;
+  margin-left: 17%; }
+  #site-slogan h3, #site-slogan p {
+    width: 40%; }
+  #site-slogan h3 {
+    font-size: 2.7em;
+    text-transform: uppercase; }
+  #site-slogan p {
+    font-size: 1.2em; }
+  #site-slogan a {
+    width: 250px;
+    height: 38px;
+    border-radius: 20px;
+    background-color: rgb 120, 162, 91 !important; }
+
 #carousel {
   background: #452917;
-  height: 300px; }
+  height: 465px; }
   #carousel:before {
     display: none; }
   #carousel > .slide {
@@ -103,49 +123,33 @@ body {
     height: 250px;
     float: none; }
 
-.home-page #nav {
-  background: rgba(153, 146, 129, 0.5);
-  position: relative;
-  z-index: 2; }
-.home-page #nav + #carousel {
-  margin-top: -50px;
-  position: relative;
-  z-index: 1; }
+#myCarousel {
+  height: 125px;
+  background: #f6f6ef; }
+  #myCarousel a {
+    color: black;
+    background: rgba(246, 246, 239, 0); }
+  #myCarousel h3 {
+    text-align: center;
+    font-size: 2.6em;
+    color: #654e2d; }
 
 .my-nav > li {
   display: inline-block;
   vertical-align: middle; }
 
 .promo-gallery {
-  margin-top: 50px; }
-  .promo-gallery .inner-elemets #games-section {
+  margin-top: 10px; }
+  .promo-gallery .inner-elemets {
     height: 200px;
     text-align: center;
     position: relative;
-    background: url("http://www.pulsar.bg/image/cache/data/Banners/Christmas-Sale-Season-website-small-banner-375x130.jpg") no-repeat;
-    background-clip: content-box;
-    background-size: contain;
-    background-position: center center; }
-  .promo-gallery .inner-elemets #movies-section {
-    height: 200px;
-    text-align: center;
-    position: relative;
-    background: url("../images/movies.jpg") no-repeat;
-    background-clip: content-box;
-    background-size: contain;
-    background-position: center center; }
-  .promo-gallery .inner-elemets #books-section {
-    height: 200px;
-    text-align: center;
-    position: relative;
-    background: url("../images/books.jpg") no-repeat;
-    background-clip: content-box;
-    background-size: contain;
-    background-position: center center; }
-  .promo-gallery .inner-elemets a {
-    position: absolute;
-    margin: auto;
-    width: 50%;
-    bottom: 1em; }
+    background: black;
+    background-size: cover;
+    background-clip: content-box; }
+
+.row {
+  margin-left: 0;
+  margin-right: 0; }
 
 /*# sourceMappingURL=site.css.map */

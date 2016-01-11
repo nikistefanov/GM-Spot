@@ -1,8 +1,13 @@
+$brown: rgb(69, 41, 23);
 $light: rgb(153, 100, 67);
 $light-gray: rgb(153, 146, 129);
 $dark-gray: rgb(140, 134, 118);
-$brown: rgb(69, 41, 23);
 $more-dark: rgb(33, 57, 69);
+$hovered-color-text: rgb(238, 238, 186);
+$btn-green: rgb (120, 162, 91);
+$first-layer-bgcolor: rgb (78, 67, 22);
+$second-layer-bgcolor: rgb(124, 99, 95);
+$slogan-text-color: rgb(101, 78, 45);
 $custom-font-family: "Myriad Pro";
 
 %reset {
@@ -10,6 +15,7 @@ $custom-font-family: "Myriad Pro";
 	padding: 0;
 	list-style: none;
 }
+
 %padding {
 	padding-top: .5em;
 	padding-bottom: .5em;
@@ -17,7 +23,7 @@ $custom-font-family: "Myriad Pro";
 
 body {
 	@extend %reset;
-	font-size: 14px;
+	font-size: 12px;
 	font-family:$custom-font-family, sans-serif;
 }
 
@@ -53,20 +59,15 @@ body {
 
 #header {
 	@extend %padding;
-	background: $brown;
 	color: #ffffff;
 
 	#logo {
 		margin: 0;
 		font: inherit;
-		font-size: 2.3em;
-		font-weight: bold;
-		text-transform: uppercase;
+		font-size: 2.7em;
+		text-transform: lowercase;
 
-		span {
-			font-weight: normal;
-		}
-		span:before {
+		p:before {
 			content: "";
 			margin: 0 5px 0 0;
 			display: inline-block;
@@ -82,6 +83,7 @@ body {
 	.user-nav {
 		text-align: right;
 	}
+
 	.my-nav {
 		display: inline-block;
 
@@ -90,11 +92,10 @@ body {
 		}
 
 		a {
-			color: $light;
+			color: white;
 
 			&:hover {
 				text-decoration: none;
-
 			}
 		}
 
@@ -115,6 +116,7 @@ body {
 #nav {
 	color: white;
 	background: $light-gray;
+	margin-left: 15.7%;
 	border-radius: 0;
 	border: 0;
 	margin-bottom: 0;
@@ -132,10 +134,21 @@ body {
 	}
 
 	li, .navbar-brand {
+			text-transform: uppercase;
 
 			&:hover {
+				font-style: italic;
+				color: $hovered-color-text;
 				border-radius: 3px;
 				background-color: $dark-gray;
+			}
+		}
+
+		p {
+
+			&:hover {
+				font-style: bold;
+				color: inherit;
 			}
 		}
 
@@ -156,9 +169,36 @@ body {
 	}
 }
 
+#site-slogan {
+	color: white;
+	margin-left: 17%;
+
+	h3, p {
+		width: 40%;
+	}
+
+	h3 {
+		font-size: 2.7em;
+		text-transform: uppercase;
+	}
+
+	p {
+		font-size: 1.2em;
+	}
+
+	a {
+		width: 250px;
+		height: 38px;
+		border-radius: 20px;
+		background-color: $btn-green !important;
+	}
+}
+
 #carousel {
+	// background-color: $first-layer-bgcolor;
+  // background-color: rgba($second-layer-bgcolor, .7);
 	background: $brown;
-	height: 300px;
+	height: 465px;
 
 	&:before {
 		display: none;
@@ -172,16 +212,19 @@ body {
 	}
 }
 
-.home-page {
-	#nav {
-		background: rgba( $light-gray, .5 );
-		position: relative;
-		z-index: 2;
+#myCarousel {
+	height: 125px;
+	background: rgb(246, 246, 239);
+
+	a {
+		color: black;
+		background: rgba(246, 246, 239, 0);
 	}
-	#nav + #carousel {
-		margin-top: -50px;
-		position: relative;
-		z-index: 1;
+
+	h3 {
+		text-align: center;
+		font-size: 2.6em;
+		color: $slogan-text-color
 	}
 }
 
@@ -195,52 +238,19 @@ body {
 }
 
 .promo-gallery {
-	margin-top: 50px;
+	margin-top: 10px;
 
 	 .inner-elemets {
-		// height: 200px;
-		// text-align: center;
-		// position: relative;
-		// background: black url("../images/games.jpg") no-repeat;
-		// background-size: cover;
-		// background-clip: content-box;
-
-			#games-section {
-				height: 200px;
-				text-align: center;
-				position: relative;
-				//background: url("../images/games.jpg") no-repeat;
-				background: url("http://www.pulsar.bg/image/cache/data/Banners/Christmas-Sale-Season-website-small-banner-375x130.jpg") no-repeat;
-				background-clip: content-box;
-				background-size:     contain;
-    		background-position: center center;
-			}
-
-			#movies-section {
-				height: 200px;
-				text-align: center;
-				position: relative;
-				background: url("../images/movies.jpg") no-repeat;
-				background-clip: content-box;
-				background-size:     contain;
-    		background-position: center center;
-			}
-
-			#books-section {
-				height: 200px;
-				text-align: center;
-				position: relative;
-				background: url("../images/books.jpg") no-repeat;
-				background-clip: content-box;
-				background-size:     contain;
-    		background-position: center center;
-			}
-
-			a {
-		 	 position: absolute;
-			 margin: auto;
-		 	 width: 50%;
-		 	 bottom: 1em;
-		  }
+		height: 200px;
+		text-align: center;
+		position: relative;
+		background: black;
+		background-size: cover;
+		background-clip: content-box;
 	}
+}
+
+.row {
+	margin-left: 0;
+	margin-right: 0;
 }

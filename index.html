@@ -10,15 +10,13 @@
   </head>
   <body>
     <div id="wrapper" class="container">
-      <header id="header" class="row">
-        <div class="col-md-4">
-          <h1 id="logo">GM <span>Spot</span></h1>
-        </div>
-        <div class="col-md-8 user-nav">
-          
-        </div>
-      </header>
-      <nav id="nav" class="navbar navbar-default row">
+      <div id="carousel" class="row">
+        <header id="header" class="row">
+          <div class="col-md-4 user-nav pull-right">
+
+          </div>
+        </header>
+        <nav id="nav" class="navbar navbar-default row">
         <div class="container-fluid col-md-12">
           <div class="navbar-header">
             <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
@@ -27,7 +25,7 @@
               <span class="icon-bar"></span>
               <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand active" href="#/home"><i class="glyphicon glyphicon-home"></i> <span class="sr-only">(current)</span></a>
+            <a class="navbar-brand active" href="#/home"><p id="logo">GM Spot</p></a>
           </div>
           <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav">
@@ -35,18 +33,22 @@
               <li><a href="#/movies">Movies</a></li>
               <li><a href="#/books">Books</a></li>
             </ul>
-            <form class="navbar-form navbar-right" role="search">
-    				<div class="form-group">
-    					<input type="search" class="form-control" placeholder="Search" />
-    					<i class="glyphicon glyphicon-search"></i>
-    				</div>
-    			</form>
           </div>
         </div>
       </nav>
+      <div id="site-slogan" class="row">
+          <h3>
+            Your place for buying, selling or giving away games, movies and books!
+          </h3>
+          <p>
+            Are you boored with your current games, sell them and buy new ones. Or just do a good deed and give some for free, make a present :)
+          </p>
+          <a class="btn btn-success" href="#/games">Try now with games</a>
+      </div>
+      </div>
       <div id="main">
         <div id="products">
-          
+
         </div>
       </div>
       <footer id="footer" class="row">

@@ -3,7 +3,7 @@
     <div class="panel-heading" role="tab" id="headingTwo">
       <h4 class="panel-title">
         <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-          Add a game:
+          Add game:
         </a>
       </h4>
     </div>
@@ -14,24 +14,20 @@
       </div>
       <div class="input-group">
         <span class="input-group-addon">Platform</span>
-        <label class="checkbox-inline">
-          <input type="checkbox" class="platform-checkbox" value="action" />Action
-        </label>
-        <label class="checkbox-inline">
-          <input type="checkbox" class="platform-checkbox" value="adventure" />Adventure
-        </label>
-        <label class="checkbox-inline">
-          <input type="checkbox" class="platform-checkbox" value="role-playing" />Role-playing
-        </label>
-        <label class="checkbox-inline">
-          <input type="checkbox" class="platform-checkbox" value="simulation" />Simulation
-        </label>
-        <label class="checkbox-inline">
-          <input type="checkbox" class="platform-checkbox" value="strategy" />Strategy
-        </label>
-        <label class="checkbox-inline">
-          <input type="checkbox" class="platform-checkbox" value="vintage" />Vintage
-        </label>
+        <select class="form-control" id="tb-game-platform">
+          <option>Choose platform</option>
+          <option>Playstation 4</option>
+          <option>Playstation 3</option>
+          <option>Playstation 2</option>
+          <option>PS Vita</option>
+          <option>XBOX ONE</option>
+          <option>XBOX 360</option>
+          <option>PC</option>
+          <option>Wii U</option>
+          <option>Wii</option>
+          <option>Nintendo 3DS</option>
+          <option>Nintendo DS</option>
+        </select>
       </div>
       <div class="input-group">
         <span class="input-group-addon">Price</span>
@@ -72,7 +68,7 @@
   </div>
 </div>
 
-<div class="gallery row">
+<div class="gallery">
   {{#games}}
     <div class="col-sm-6 col-md-4">
       <div class="thumbnail row">

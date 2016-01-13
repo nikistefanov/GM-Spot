@@ -58,7 +58,7 @@ export default {
 
       var gameData = {
         title: $('#tb-game-title').val(),
-				platform: $('#tb-game-platform').val(),
+				platform: $("#tb-game-platform option:selected").text(),
         price: $('#tb-game-price').val(),
         img: $('#basic-url').val(),
         description: $('#tb-game-description').val(),
@@ -67,7 +67,7 @@ export default {
 
       data.games.add(gameData)
         .then(function(data) {
-          notifier.success("Game ' + data.get('title') + ' added.");
+          notifier.success("Game added.");
           location.reload();
         });
     })

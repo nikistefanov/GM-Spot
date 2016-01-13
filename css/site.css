@@ -182,7 +182,9 @@ body {
   color: #fff;
   font-weight: bold;
   width: 50%;
-  margin: 0 auto; }
+  margin: 0 auto;
+  margin-top: 5px;
+  margin-bottom: 5px; }
 
 .checkbox-inline input {
   vertical-align: middle; }

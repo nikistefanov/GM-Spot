@@ -247,6 +247,8 @@ body {
   font-weight: bold;
   width: 50%;
   margin: 0 auto;
+	margin-top: 5px;
+	margin-bottom: 5px;
 }
 .checkbox-inline {
   input {
@@ -255,14 +257,4 @@ body {
 }
 .genres {
 	border-bottom: 1px solid #ccc;
-}
-
-.gallery {
-	.gallery-inner {
-	}
-
-	img {
-		// width: 50%;
-		// height: 50%;
-	}
 }

@@ -182,14 +182,19 @@ body {
   color: #fff;
   font-weight: bold;
   width: 50%;
-  margin: 0 auto;
-  margin-top: 5px;
-  margin-bottom: 5px; }
+  margin: 5px auto; }
 
 .checkbox-inline input {
   vertical-align: middle; }
 
 .genres {
   border-bottom: 1px solid #ccc; }
+
+.gallery img {
+  width: 50%;
+  height: 50%; }
+.gallery ul {
+  list-style-type: none;
+  padding-left: 0; }
 
 /*# sourceMappingURL=site.css.map */

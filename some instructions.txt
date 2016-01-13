@@ -21,8 +21,12 @@ thi is to skip cross origin
 
 
 ## da se izmisli po dobar nachin za background na trite sections v home page
-## hover na item v navbar-a - da e po maluk height
+## hover na item v navbar-a - da e po maluk height kakto e pokazno v uslovieto
 ## kogato se hoverne logoto da ne se promenq!
 ## kak da napravq background-color da e ot dva cvqta s opacity
 ## carousel - da se mahnat strelkite, da se slojat tochki i da se vidi zashto ne raboti js!
 ## Select za platform -> da se izbira zaduljitelno (da pishe choose i kato se klike da izchezva tozi choose)
+## Games snimkite da ne sa tolkova golqmi pri + i -, kkato i da nqma tazi razlika v visochinata na kutiite
+
+>> video Evlogie's 2:03
+>>

@@ -25,3 +25,4 @@ thi is to skip cross origin
 ## kogato se hoverne logoto da ne se promenq!
 ## kak da napravq background-color da e ot dva cvqta s opacity
 ## carousel - da se mahnat strelkite, da se slojat tochki i da se vidi zashto ne raboti js!
+## po dobur nachin za vzemane na stoinostite ot checkbox - genres - ne da izpolzvam const i da vurtq loop

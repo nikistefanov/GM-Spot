@@ -1,1 +1,102 @@
-<h1>Games</h1>
+<div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+  <div class="panel panel-default">
+    <div class="panel-heading" role="tab" id="headingTwo">
+      <h4 class="panel-title">
+        <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+          Add a game:
+        </a>
+      </h4>
+    </div>
+    <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
+      <div class="input-group">
+        <span class="input-group-addon">Title</span>
+        <input type="text" class="form-control" aria-describedby="basic-addon1" id="tb-game-title">
+      </div>
+      <div class="input-group">
+        <span class="input-group-addon">Platform</span>
+        <label class="checkbox-inline">
+          <input type="checkbox" class="platform-checkbox" value="action" />Action
+        </label>
+        <label class="checkbox-inline">
+          <input type="checkbox" class="platform-checkbox" value="adventure" />Adventure
+        </label>
+        <label class="checkbox-inline">
+          <input type="checkbox" class="platform-checkbox" value="role-playing" />Role-playing
+        </label>
+        <label class="checkbox-inline">
+          <input type="checkbox" class="platform-checkbox" value="simulation" />Simulation
+        </label>
+        <label class="checkbox-inline">
+          <input type="checkbox" class="platform-checkbox" value="strategy" />Strategy
+        </label>
+        <label class="checkbox-inline">
+          <input type="checkbox" class="platform-checkbox" value="vintage" />Vintage
+        </label>
+      </div>
+      <div class="input-group">
+        <span class="input-group-addon">Price</span>
+        <input type="text" class="form-control" aria-label="Amount (to the nearest dollar)" id="tb-game-price">
+        <span class="input-group-addon">.00</span>
+      </div>
+      <div class="input-group">
+        <span class="input-group-addon">Image URL</span>
+        <input type="text" class="form-control" id="basic-url" aria-describedby="basic-addon3">
+      </div>
+      <div class="input-group">
+        <span class="input-group-addon">Description</span>
+        <input type="text" class="form-control" id="tb-game-description" aria-describedby="basic-addon1">
+      </div>
+      <div class="input-group genres">
+        <span class="input-group-addon">Genres</span>
+        <label class="checkbox-inline">
+          <input type="checkbox" class="genres-checkbox" value="action" />Action
+        </label>
+        <label class="checkbox-inline">
+          <input type="checkbox" class="genres-checkbox" value="adventure" />Adventure
+        </label>
+        <label class="checkbox-inline">
+          <input type="checkbox" class="genres-checkbox" value="role-playing" />Role-playing
+        </label>
+        <label class="checkbox-inline">
+          <input type="checkbox" class="genres-checkbox" value="simulation" />Simulation
+        </label>
+        <label class="checkbox-inline">
+          <input type="checkbox" class="genres-checkbox" value="strategy" />Strategy
+        </label>
+        <label class="checkbox-inline">
+          <input type="checkbox" class="genres-checkbox" value="vintage" />Vintage
+        </label>
+      </div>
+      <button class="btn btn-default" type="button" id="btn-add-game">Add+</button>
+    </div>
+  </div>
+</div>
+
+<div class="gallery row">
+  {{#games}}
+    <div class="col-sm-6 col-md-4">
+      <div class="thumbnail row">
+        <img class="col-md-6" src="{{img}}" alt="game-poster">
+        <div class="col-md-6">
+          <h5>{{title}}</h5>
+          <p>
+            <span>{{price}}</span>
+          </p>
+          <ul>
+            {{#each genres}}
+              <li>{{this}}</li>
+            {{/each}}
+          </ul>
+        </div>
+      </div>
+      <div class="caption">
+        <p>
+          <span>For: {{platform}}</span>
+        </p>
+        <p>{{description}}</p>
+        <p><a href="#" class="btn btn-primary" role="button">Buy</a></p>
+      </div>
+    </div>
+</div>
+{{/games}}
+</div>

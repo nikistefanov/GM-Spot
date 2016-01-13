@@ -9,55 +9,59 @@ import data from 'scripts/data.js'
 
 
 var containerId = '#main',
-	$container = $(containerId);
+  $container = $(containerId);
 
 var sammyApp = Sammy(containerId, function() {
-  this.get('#/', function () {
+  this.get('#/', function() {
     this.redirect('#/home')
   });
 
-  this.get('#/home', function () {
-  	templates.load('home')
-  		.then(function(templateHtml) {
-  			$container.html(templateHtml);
-  		})
+  this.get('#/home', function() {
+    templates.load('home')
+      .then(function(templateHtml) {
+        $container.html(templateHtml);
+      })
   });
 
-  this.get('#/games', function () {
+  this.get('#/games', function() {
     // watch the video from 1:28 till 2:22
+    Promise.all([data.games.all(), templates.load('games')])
+      .then(function(results) {
+        var template = Handlebars.compile(results[1]),
+          html = template(results[0]);
 
-  	templates.load('games')
-  		.then(function(templateHtml) {
-  			$container.html(templateHtml);
-  		})
+        $container.html(html);
+      })
+
+    eventLoader.gameEvents($container);
   });
 
-  this.get('#/login', function(){
-        templates.load('login')
-            .then(function(templateHtml) {
-                $container.html(templateHtml);
-            })
+  this.get('#/login', function() {
+    templates.load('login')
+      .then(function(templateHtml) {
+        $container.html(templateHtml);
+      })
 
-        eventLoader.loginPageEvents($container);
-    });
+    eventLoader.loginPageEvents($container);
+  });
 
-  this.get('#/register', function(){
-        templates.load('register')
-            .then(function(templateHtml) {
-                $container.html(templateHtml);
-            })
+  this.get('#/register', function() {
+    templates.load('register')
+      .then(function(templateHtml) {
+        $container.html(templateHtml);
+      })
 
-        eventLoader.loginPageEvents($container);
-    });
+    eventLoader.loginPageEvents($container);
+  });
 
 
   Promise.all([data.users.current(), templates.load('login-logout')])
-        .then(function(results){
-            var template = Handlebars.compile(results[1]),
-                html = template(results[0]);
+    .then(function(results) {
+      var template = Handlebars.compile(results[1]),
+        html = template(results[0]);
 
-            $('.user-nav').append(html);
-        })
+      $('.user-nav').append(html);
+    })
   eventLoader.navigationEvents($('.user-nav'));
 });
 

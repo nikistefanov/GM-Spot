@@ -4,15 +4,15 @@ body, .my-nav {
   list-style: none; }
 
 #footer, #header {
-  padding-top: .5em;
-  padding-bottom: .5em; }
+  padding-top: 0.5em;
+  padding-bottom: 0.5em; }
 
 body {
   font-size: 12px;
   font-family: "Myriad Pro", sans-serif; }
 
 #footer {
-  margin-top: .5em;
+  margin-top: 0.5em;
   color: #fff;
   background: #999281; }
   #footer a {
@@ -60,7 +60,7 @@ body {
       border-radius: 3px;
       background-color: rgba(153, 146, 129, 0.6); }
     #header .my-nav .badge {
-      opacity: .8; }
+      opacity: 0.8; }
 
 #nav {
   color: white;
@@ -75,9 +75,11 @@ body {
     color: inherit; }
     #nav a:hover {
       text-decoration: none; }
-  #nav li, #nav .navbar-brand {
+  #nav li,
+  #nav .navbar-brand {
     text-transform: uppercase; }
-    #nav li:hover, #nav .navbar-brand:hover {
+    #nav li:hover,
+    #nav .navbar-brand:hover {
       font-style: italic;
       color: #eeeeba;
       border-radius: 3px;
@@ -89,8 +91,8 @@ body {
     position: relative; }
     #nav .form-group > .glyphicon {
       position: absolute;
-      right: .5em;
-      top: .75em; }
+      right: 0.5em;
+      top: 0.75em; }
   #nav input[type="search"] {
     box-shadow: none;
     border: 0;
@@ -100,7 +102,8 @@ body {
 #site-slogan {
   color: white;
   margin-left: 17%; }
-  #site-slogan h3, #site-slogan p {
+  #site-slogan h3,
+  #site-slogan p {
     width: 40%; }
   #site-slogan h3 {
     font-size: 2.7em;
@@ -151,5 +154,40 @@ body {
 .row {
   margin-left: 0;
   margin-right: 0; }
+
+.panel-group {
+  width: 60%;
+  margin: 10px auto 20px; }
+  .panel-group .panel-collapse {
+    position: relative;
+    text-align: center;
+    border: 0; }
+    .panel-group .panel-collapse span,
+    .panel-group .panel-collapse input {
+      border-radius: 0; }
+    .panel-group .panel-collapse input {
+      border-right: 0; }
+    .panel-group .panel-collapse button {
+      position: relative;
+      border-radius: 10px; }
+  .panel-group .panel-heading {
+    text-align: center;
+    border-radius: 10px; }
+
+#btn-add-game {
+  background-color: #6BBE92;
+  border: 0;
+  padding: 10px 0;
+  text-align: center;
+  color: #fff;
+  font-weight: bold;
+  width: 50%;
+  margin: 0 auto; }
+
+.checkbox-inline input {
+  vertical-align: middle; }
+
+.genres {
+  border-bottom: 1px solid #ccc; }
 
 /*# sourceMappingURL=site.css.map */

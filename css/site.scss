@@ -9,248 +9,260 @@ $first-layer-bgcolor: rgb (78, 67, 22);
 $second-layer-bgcolor: rgb(124, 99, 95);
 $slogan-text-color: rgb(101, 78, 45);
 $custom-font-family: "Myriad Pro";
-
 %reset {
-	margin: 0;
-	padding: 0;
-	list-style: none;
+  margin: 0;
+  padding: 0;
+  list-style: none;
 }
-
 %padding {
-	padding-top: .5em;
-	padding-bottom: .5em;
+  padding-top: 0.5em;
+  padding-bottom: 0.5em;
 }
-
 body {
-	@extend %reset;
-	font-size: 12px;
-	font-family:$custom-font-family, sans-serif;
+  @extend %reset;
+  font-size: 12px;
+  font-family: $custom-font-family, sans-serif;
 }
-
 #footer {
-	@extend %padding;
-	margin-top: .5em;
-	color: #fff;
-	background: $light-gray;
-
-	a {
-		color: inherit;
-		background: none;
-
-		&:hover {
-			text-decoration: underline;
-		}
-	}
-
-	.my-nav {
-		li + li:before {
-			content: "|";
-			margin: 0 3px;
-			display: inline-block;
-			vertical-align: middle;
-		}
-	}
-
-	.copy {
-		margin: 0;
-		text-align:right;
-	}
+  @extend %padding;
+  margin-top: 0.5em;
+  color: #fff;
+  background: $light-gray;
+  a {
+    color: inherit;
+    background: none;
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+  .my-nav {
+    li + li:before {
+      content: "|";
+      margin: 0 3px;
+      display: inline-block;
+      vertical-align: middle;
+    }
+  }
+  .copy {
+    margin: 0;
+    text-align: right;
+  }
 }
-
 #header {
-	@extend %padding;
-	color: #ffffff;
-
-	#logo {
-		margin: 0;
-		font: inherit;
-		font-size: 2.7em;
-		text-transform: lowercase;
-
-		p:before {
-			content: "";
-			margin: 0 5px 0 0;
-			display: inline-block;
-			width: 1em;
-			height: 1em;
-			border-radius: 100%;
-			border: 3px solid $light-gray;
-			position: relative;
-			top: 1px;
-		}
-	}
-
-	.user-nav {
-		text-align: right;
-	}
-
-	.my-nav {
-		display: inline-block;
-
-		li + li {
-			margin-left: 10px;
-		}
-
-		a {
-			color: white;
-
-			&:hover {
-				text-decoration: none;
-			}
-		}
-
-		li {
-
-			&:hover {
-				border-radius: 3px;
-				background-color: rgba($light-gray, .6);
-			}
-		}
-
-		.badge {
-			opacity: .8;
-		}
-	}
+  @extend %padding;
+  color: #ffffff;
+  #logo {
+    margin: 0;
+    font: inherit;
+    font-size: 2.7em;
+    text-transform: lowercase;
+    p:before {
+      content: "";
+      margin: 0 5px 0 0;
+      display: inline-block;
+      width: 1em;
+      height: 1em;
+      border-radius: 100%;
+      border: 3px solid $light-gray;
+      position: relative;
+      top: 1px;
+    }
+  }
+  .user-nav {
+    text-align: right;
+  }
+  .my-nav {
+    display: inline-block;
+    li + li {
+      margin-left: 10px;
+    }
+    a {
+      color: white;
+      &:hover {
+        text-decoration: none;
+      }
+    }
+    li {
+      &:hover {
+        border-radius: 3px;
+        background-color: rgba($light-gray, .6);
+      }
+    }
+    .badge {
+      opacity: 0.8;
+    }
+  }
 }
-
 #nav {
-	color: white;
-	background: $light-gray;
-	margin-left: 15.7%;
-	border-radius: 0;
-	border: 0;
-	margin-bottom: 0;
-
-	ul {
-		background: $light-gray;
-	}
-
-	a {
-		color: inherit;
-
-		&:hover {
-			text-decoration: none;
-		}
-	}
-
-	li, .navbar-brand {
-			text-transform: uppercase;
-
-			&:hover {
-				font-style: italic;
-				color: $hovered-color-text;
-				border-radius: 3px;
-				background-color: $dark-gray;
-			}
-		}
-
-		p {
-
-			&:hover {
-				font-style: bold;
-				color: inherit;
-			}
-		}
-
-	.form-group {
-		position: relative;
-
-		> .glyphicon {
-			position: absolute;
-			right: .5em;
-			top: .75em;
-		}
-	}
-	input[type="search"] {
-		box-shadow: none;
-		border: 0;
-		color: white;
-		background: $light;
-	}
+  color: white;
+  background: $light-gray;
+  margin-left: 15.7%;
+  border-radius: 0;
+  border: 0;
+  margin-bottom: 0;
+  ul {
+    background: $light-gray;
+  }
+  a {
+    color: inherit;
+    &:hover {
+      text-decoration: none;
+    }
+  }
+  li,
+  .navbar-brand {
+    text-transform: uppercase;
+    &:hover {
+      font-style: italic;
+      color: $hovered-color-text;
+      border-radius: 3px;
+      background-color: $dark-gray;
+    }
+  }
+  p {
+    &:hover {
+      font-style: bold;
+      color: inherit;
+    }
+  }
+  .form-group {
+    position: relative;
+    > .glyphicon {
+      position: absolute;
+      right: 0.5em;
+      top: 0.75em;
+    }
+  }
+  input[type="search"] {
+    box-shadow: none;
+    border: 0;
+    color: white;
+    background: $light;
+  }
 }
-
 #site-slogan {
-	color: white;
-	margin-left: 17%;
-
-	h3, p {
-		width: 40%;
-	}
-
-	h3 {
-		font-size: 2.7em;
-		text-transform: uppercase;
-	}
-
-	p {
-		font-size: 1.2em;
-	}
-
-	a {
-		width: 250px;
-		height: 38px;
-		border-radius: 20px;
-		background-color: $btn-green !important;
-	}
+  color: white;
+  margin-left: 17%;
+  h3,
+  p {
+    width: 40%;
+  }
+  h3 {
+    font-size: 2.7em;
+    text-transform: uppercase;
+  }
+  p {
+    font-size: 1.2em;
+  }
+  a {
+    width: 250px;
+    height: 38px;
+    border-radius: 20px;
+    background-color: $btn-green !important;
+  }
 }
-
 #carousel {
-	// background-color: $first-layer-bgcolor;
+  // background-color: $first-layer-bgcolor;
   // background-color: rgba($second-layer-bgcolor, .7);
-	background: $brown;
-	height: 465px;
-
-	&:before {
-		display: none;
-	}
-
-	> .slide {
-		//background: url("../images/sliding-image-1.jpg") no-repeat;
-		background-size: 100% 100%;
-		height: 250px;
-		float: none;
-	}
+  background: $brown;
+  height: 465px;
+  &:before {
+    display: none;
+  }
+  > .slide {
+    //background: url("../images/sliding-image-1.jpg") no-repeat;
+    background-size: 100% 100%;
+    height: 250px;
+    float: none;
+  }
 }
-
 #myCarousel {
-	height: 125px;
-	background: rgb(246, 246, 239);
-
-	a {
-		color: black;
-		background: rgba(246, 246, 239, 0);
-	}
-
-	h3 {
-		text-align: center;
-		font-size: 2.6em;
-		color: $slogan-text-color
-	}
+  height: 125px;
+  background: rgb(246, 246, 239);
+  a {
+    color: black;
+    background: rgba(246, 246, 239, 0);
+  }
+  h3 {
+    text-align: center;
+    font-size: 2.6em;
+    color: $slogan-text-color;
+  }
 }
-
 .my-nav {
-	@extend %reset;
-
-	> li {
-		display: inline-block;
-		vertical-align: middle;
-	}
+  @extend %reset;
+  > li {
+    display: inline-block;
+    vertical-align: middle;
+  }
 }
-
 .promo-gallery {
-	margin-top: 10px;
+  margin-top: 10px;
+  .inner-elemets {
+    height: 200px;
+    text-align: center;
+    position: relative;
+    background: black;
+    background-size: cover;
+    background-clip: content-box;
+  }
+}
+.row {
+  margin-left: 0;
+  margin-right: 0;
+}
+.panel-group {
+  width: 60%;
+  margin: 10px auto 20px;
+  .panel-collapse {
+    position: relative;
+    text-align: center;
+    border: 0;
 
-	 .inner-elemets {
-		height: 200px;
-		text-align: center;
-		position: relative;
-		background: black;
-		background-size: cover;
-		background-clip: content-box;
-	}
+    span,
+    input {
+      border-radius: 0;
+    }
+
+		input {
+			border-right: 0;
+		}
+
+		button {
+			position: relative;
+			border-radius: 10px;
+		}
+  }
+  .panel-heading {
+    text-align: center;
+    border-radius: 10px;
+  }
+}
+#btn-add-game {
+  background-color: #6BBE92;
+  border: 0;
+  padding: 10px 0;
+  text-align: center;
+  color: #fff;
+  font-weight: bold;
+  width: 50%;
+  margin: 0 auto;
+}
+.checkbox-inline {
+  input {
+    vertical-align: middle;
+  }
+}
+.genres {
+	border-bottom: 1px solid #ccc;
 }
 
-.row {
-	margin-left: 0;
-	margin-right: 0;
+.gallery {
+	.gallery-inner {
+	}
+
+	img {
+		// width: 50%;
+		// height: 50%;
+	}
 }

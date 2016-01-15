@@ -1,2 +1,2 @@
 # GM-Spot
-Website for renting, buying and sharing games, movies and books!
+Website for buying and sharing games, movies and books!

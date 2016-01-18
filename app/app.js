@@ -7,7 +7,6 @@ import eventLoader from 'scripts/eventLoader.js'
 import notifier from 'scripts/notifier.js'
 import data from 'scripts/data.js'
 
-
 var containerId = '#main',
   $container = $(containerId);
 
@@ -17,14 +16,18 @@ var sammyApp = Sammy(containerId, function() {
   });
 
   this.get('#/home', function() {
-    templates.load('home')
-      .then(function(templateHtml) {
-        $container.html(templateHtml);
+    Promise.all([data.games.all(), templates.load('home')])
+      .then(function(results) {
+        var template = Handlebars.compile(results[1]),
+          html = template(results[0]);
+
+        $container.html(html);
       })
+
+    eventLoader.gameEvents($container);
   });
 
   this.get('#/games', function() {
-    // watch the video from 1:28 till 2:22
     Promise.all([data.games.all(), templates.load('games')])
       .then(function(results) {
         var template = Handlebars.compile(results[1]),

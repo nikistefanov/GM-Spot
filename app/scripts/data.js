@@ -37,10 +37,16 @@ export default {
             });
           })
           .then(function(data) {
-            resolve({games: data});
+            var currentUserId = Parse.User.current() ? Parse.User.current().id : '';
+            data.map(function(item) {
+              item.isOwner = currentUserId === item.ownerId;
+              return item;
+            });
+            resolve({
+              games: data
+            });
           })
       })
-
     },
     get: function(id) {
 
@@ -48,14 +54,21 @@ export default {
     add: function(gameData) {
       var game = new Game();
 
-      ['title', 'platform', 'price', 'img', 'description', 'genres'].forEach((key) => {
+      ['title', 'platform', 'price', 'img', 'description', 'genres', 'owner'].forEach((key) => {
         game.set(key, gameData[key]);
       });
 
       return game.save();
     },
     remove: function(id) {
+      var query = new Parse.Query(Game);
 
+      return new Promise(function(resolve, reject) {
+        query.get(id)
+          .then(function(game) {
+            resolve(game.destroy());
+          });
+      });
     }
   }
 }

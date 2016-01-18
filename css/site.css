@@ -7,6 +7,14 @@ body, .my-nav {
   padding-top: 0.5em;
   padding-bottom: 0.5em; }
 
+#header, #nav .container-fluid, .promo-gallery {
+  padding-right: 16%;
+  padding-left: 16%; }
+
+#site-slogan, #myCarousel h3 {
+  padding-right: 16%;
+  padding-left: 16%; }
+
 body {
   font-size: 12px;
   font-family: "Myriad Pro", sans-serif; }
@@ -31,6 +39,8 @@ body {
 
 #header {
   color: #ffffff; }
+  #header .pull-right {
+    padding-right: 0; }
   #header #logo {
     margin: 0;
     font: inherit;
@@ -65,7 +75,7 @@ body {
 #nav {
   color: white;
   background: #999281;
-  margin-left: 15.7%;
+  margin-left: 16%;
   border-radius: 0;
   border: 0;
   margin-bottom: 0; }
@@ -82,7 +92,6 @@ body {
     #nav .navbar-brand:hover {
       font-style: italic;
       color: #eeeeba;
-      border-radius: 3px;
       background-color: #8c8676; }
   #nav p:hover {
     font-style: bold;
@@ -93,15 +102,11 @@ body {
       position: absolute;
       right: 0.5em;
       top: 0.75em; }
-  #nav input[type="search"] {
-    box-shadow: none;
-    border: 0;
-    color: white;
-    background: #996443; }
+  #nav .container-fluid {
+    padding-left: 20px; }
 
 #site-slogan {
-  color: white;
-  margin-left: 17%; }
+  color: white; }
   #site-slogan h3,
   #site-slogan p {
     width: 40%; }
@@ -136,18 +141,26 @@ body {
     text-align: center;
     font-size: 2.6em;
     color: #654e2d; }
+  #myCarousel .carousel-indicators {
+    position: relative; }
 
 .my-nav > li {
   display: inline-block;
   vertical-align: middle; }
 
 .promo-gallery {
-  margin-top: 10px; }
+  background: #eae8cf url(../images/promo-gallery-background.jpg) no-repeat;
+  background-size: 100% 100%;
+  padding-top: 10px;
+  padding-bottom: 10px; }
   .promo-gallery .inner-elemets {
-    height: 200px;
+    padding: 0;
+    margin-bottom: 10px;
+    width: 250px;
+    height: 280px;
     text-align: center;
     position: relative;
-    background: black;
+    border: 1px solid red;
     background-size: cover;
     background-clip: content-box; }
 
@@ -190,9 +203,12 @@ body {
 .genres {
   border-bottom: 1px solid #ccc; }
 
+.gallery .description {
+  height: 50px;
+  overflow: hidden; }
 .gallery img {
-  width: 50%;
-  height: 50%; }
+  width: 130px;
+  height: 150px; }
 .gallery ul {
   list-style-type: none;
   padding-left: 0; }

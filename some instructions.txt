@@ -12,21 +12,16 @@ thi is to skip cross origin
 
 
 
-## v games da ima categories
-- ps
-- xbox
-- pc
-- nintendo
-- vintage
-
-
-## da se izmisli po dobar nachin za background na trite sections v home page
-## hover na item v navbar-a - da e po maluk height kakto e pokazno v uslovieto
-## kogato se hoverne logoto da ne se promenq!
-## kak da napravq background-color da e ot dva cvqta s opacity
-## carousel - da se mahnat strelkite, da se slojat tochki i da se vidi zashto ne raboti js!
-## Select za platform -> da se izbira zaduljitelno (da pishe choose i kato se klike da izchezva tozi choose)
-## Games snimkite da ne sa tolkova golqmi pri + i -, kkato i da nqma tazi razlika v visochinata na kutiite
-
->> video Evlogie's 2:03
->>
+## Width да остане 960px а не да слагам насвякъде margin и padding
+## Home как да се центрират 3-те sections
+## Когато се хавърне item от navbar-a height да е по малък (показано в условието)
+## Когато логото се хавърне да не се променя
+## Как да се използват два background-a за един (с opacity)
+## Carousel - да се махнат стрелките и да се сложат точки (js не работи от началото - трябва да се превърти за да започне да ги мести) - carousel-indicators това са точките
+## "Try now" бутона на home-page когато се променя резолюцията да не изчезва, както и текста да не е толкова голям - media query?
+## Add game да е скрито ако не си логнат
+## Add game да се ховърва не само като мишката е върху текста
+## Select за platform -> да се избира задължително (да пише choose и когато се избере да изчезва choose)
+## Titles в Add game - span да е 40%, а не да чупи на всички input-и ширината
+## Да няма разлика в кутииките на игрите (само с height и width ли става? А adaptive ли е?)
+## Как да използвам ID на продукта за да го отделя в нов адрес и там да дам повече инфо за него. Как да заредя темплейта с handlebars само за този даден продукт?

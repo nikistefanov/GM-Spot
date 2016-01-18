@@ -1,99 +1,108 @@
-<div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
-  <div class="panel panel-default">
-    <div class="panel-heading" role="tab" id="headingTwo">
-      <h4 class="panel-title">
-        <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+{{#if this}}
+  <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+    <div class="panel panel-default">
+      <div class="panel-heading" role="tab" id="headingTwo">
+        <h4 class="panel-title">
+          <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
           Add game:
         </a>
-      </h4>
-    </div>
-    <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
-      <div class="input-group">
-        <span class="input-group-addon">Title</span>
-        <input type="text" class="form-control" aria-describedby="basic-addon1" id="tb-game-title">
+        </h4>
       </div>
-      <div class="input-group">
-        <span class="input-group-addon">Platform</span>
-        <select class="form-control" id="tb-game-platform">
-          <option>Choose platform</option>
-          <option>Playstation 4</option>
-          <option>Playstation 3</option>
-          <option>Playstation 2</option>
-          <option>PS Vita</option>
-          <option>XBOX ONE</option>
-          <option>XBOX 360</option>
-          <option>PC</option>
-          <option>Wii U</option>
-          <option>Wii</option>
-          <option>Nintendo 3DS</option>
-          <option>Nintendo DS</option>
-        </select>
+      <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
+        <div class="input-group">
+          <span class="input-group-addon">Title</span>
+          <input type="text" class="form-control" aria-describedby="basic-addon1" id="tb-game-title">
+        </div>
+        <div class="input-group">
+          <span class="input-group-addon">Platform</span>
+          <select class="form-control" id="tb-game-platform">
+            <option>Choose platform</option>
+            <option>Playstation 4</option>
+            <option>Playstation 3</option>
+            <option>Playstation 2</option>
+            <option>PS Vita</option>
+            <option>XBOX ONE</option>
+            <option>XBOX 360</option>
+            <option>PC</option>
+            <option>Wii U</option>
+            <option>Wii</option>
+            <option>Nintendo 3DS</option>
+            <option>Nintendo DS</option>
+          </select>
+        </div>
+        <div class="input-group">
+          <span class="input-group-addon">Price</span>
+          <input type="text" class="form-control" aria-label="Amount (to the nearest dollar)" id="tb-game-price">
+        </div>
+        <div class="input-group">
+          <span class="input-group-addon">Image URL</span>
+          <input type="text" class="form-control" id="basic-url" aria-describedby="basic-addon3">
+        </div>
+        <div class="input-group">
+          <span class="input-group-addon">Description</span>
+          <input type="text" class="form-control" id="tb-game-description" aria-describedby="basic-addon1">
+        </div>
+        <div class="input-group genres">
+          <span class="input-group-addon">Genres</span>
+          <label class="checkbox-inline">
+            <input type="checkbox" class="genres-checkbox" value="action" />Action
+          </label>
+          <label class="checkbox-inline">
+            <input type="checkbox" class="genres-checkbox" value="adventure" />Adventure
+          </label>
+          <label class="checkbox-inline">
+            <input type="checkbox" class="genres-checkbox" value="role-playing" />Role-playing
+          </label>
+          <label class="checkbox-inline">
+            <input type="checkbox" class="genres-checkbox" value="simulation" />Simulation
+          </label>
+          <label class="checkbox-inline">
+            <input type="checkbox" class="genres-checkbox" value="strategy" />Strategy
+          </label>
+          <label class="checkbox-inline">
+            <input type="checkbox" class="genres-checkbox" value="vintage" />Vintage
+          </label>
+        </div>
+        <button class="btn btn-default" type="button" id="btn-add-game">Add+</button>
       </div>
-      <div class="input-group">
-        <span class="input-group-addon">Price</span>
-        <input type="text" class="form-control" aria-label="Amount (to the nearest dollar)" id="tb-game-price">
-      </div>
-      <div class="input-group">
-        <span class="input-group-addon">Image URL</span>
-        <input type="text" class="form-control" id="basic-url" aria-describedby="basic-addon3">
-      </div>
-      <div class="input-group">
-        <span class="input-group-addon">Description</span>
-        <input type="text" class="form-control" id="tb-game-description" aria-describedby="basic-addon1">
-      </div>
-      <div class="input-group genres">
-        <span class="input-group-addon">Genres</span>
-        <label class="checkbox-inline">
-          <input type="checkbox" class="genres-checkbox" value="action" />Action
-        </label>
-        <label class="checkbox-inline">
-          <input type="checkbox" class="genres-checkbox" value="adventure" />Adventure
-        </label>
-        <label class="checkbox-inline">
-          <input type="checkbox" class="genres-checkbox" value="role-playing" />Role-playing
-        </label>
-        <label class="checkbox-inline">
-          <input type="checkbox" class="genres-checkbox" value="simulation" />Simulation
-        </label>
-        <label class="checkbox-inline">
-          <input type="checkbox" class="genres-checkbox" value="strategy" />Strategy
-        </label>
-        <label class="checkbox-inline">
-          <input type="checkbox" class="genres-checkbox" value="vintage" />Vintage
-        </label>
-      </div>
-      <button class="btn btn-default" type="button" id="btn-add-game">Add+</button>
     </div>
   </div>
-</div>
-
+{{/if}}
 
 <div class="gallery row">
   {{#games}}
-  <div class="col-sm-6 col-md-4">
-    <div class="thumbnail">
-      <div class="row">
-        <img class="col-md-6" src="{{img}}" alt="game-poster">
-        <div class="col-md-6">
-          <h5>{{title}}</h5>
+    <div class="col-sm-6 col-md-4">
+      <div class="thumbnail">
+        <div class="row">
+          <a href="#/games/game-info" class="col-md-6">
+            <img src="{{img}}" alt="game-poster">
+          </a>
+          <div class="col-md-6">
+            <h5>{{title}}</h5>
+            <p>
+              <span>Price: {{price}} BGN</span>
+            </p>
+            <ul>Genres:
+              {{#each genres}}
+                <li><i class="glyphicon glyphicon-chevron-right"></i>{{this}}</li>
+              {{/each}}
+            </ul>
+          </div>
+        </div>
+        <div class="caption" data-game-id="{{id}}">
           <p>
-            <span>Price: {{price}} BGN</span>
+            <span>For: {{platform}}</span>
           </p>
-          <ul>Genres:
-            {{#each genres}}
-              <li><i class="glyphicon glyphicon-chevron-right"></i>{{this}}</li>
-            {{/each}}
-          </ul>
+          <p class="description">{{description}}</p>
+          {{#if isOwner}}
+            <p>
+              <button id="btn-delete-game" class="btn btn-danger" name="button">Delete</button>
+            </p>
+          {{else}}
+            <p><a id="btn-buy-game" class="btn btn-primary" name="button">Buy</a></p>
+          {{/if}}
         </div>
       </div>
-      <div class="caption">
-        <p>
-          <span>For: {{platform}}</span>
-        </p>
-        <p>{{description}}</p>
-        <p><a href="#" class="btn btn-primary" role="button">Buy</a></p>
-      </div>
     </div>
-  </div>
   {{/games}}
 </div>

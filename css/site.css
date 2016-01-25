@@ -3,11 +3,11 @@ body, .my-nav {
   padding: 0;
   list-style: none; }
 
-#footer, #header {
+#header {
   padding-top: 0.5em;
   padding-bottom: 0.5em; }
 
-#header, #nav .container-fluid, .promo-gallery {
+#footer, #header, #nav .container-fluid, .promo-gallery {
   padding-right: 16%;
   padding-left: 16%; }
 
@@ -16,7 +16,7 @@ body, .my-nav {
   padding-left: 16%; }
 
 body {
-  font-size: 12px;
+  font-size: 14px;
   font-family: "Myriad Pro", sans-serif; }
 
 #footer {
@@ -41,21 +41,6 @@ body {
   color: #ffffff; }
   #header .pull-right {
     padding-right: 0; }
-  #header #logo {
-    margin: 0;
-    font: inherit;
-    font-size: 2.7em;
-    text-transform: lowercase; }
-    #header #logo p:before {
-      content: "";
-      margin: 0 5px 0 0;
-      display: inline-block;
-      width: 1em;
-      height: 1em;
-      border-radius: 100%;
-      border: 3px solid #999281;
-      position: relative;
-      top: 1px; }
   #header .user-nav {
     text-align: right; }
   #header .my-nav {
@@ -71,6 +56,18 @@ body {
       background-color: rgba(153, 146, 129, 0.6); }
     #header .my-nav .badge {
       opacity: 0.8; }
+
+#logo {
+  margin: 0;
+  font: inherit;
+  font-size: 1.7em;
+  text-transform: uppercase; }
+  #logo:hover {
+    text-decoration: none; }
+  #logo:before {
+    width: 1.7em;
+    height: 1.7em;
+    position: relative; }
 
 #nav {
   color: white;
@@ -109,27 +106,20 @@ body {
   color: white; }
   #site-slogan h3,
   #site-slogan p {
-    width: 40%; }
+    width: 60%; }
   #site-slogan h3 {
-    font-size: 2.7em;
+    font-size: 1.7em;
     text-transform: uppercase; }
   #site-slogan p {
     font-size: 1.2em; }
   #site-slogan a {
     width: 250px;
-    height: 38px;
     border-radius: 20px;
     background-color: rgb 120, 162, 91 !important; }
 
 #carousel {
   background: #452917;
-  height: 465px; }
-  #carousel:before {
-    display: none; }
-  #carousel > .slide {
-    background-size: 100% 100%;
-    height: 250px;
-    float: none; }
+  height: 460px; }
 
 #myCarousel {
   height: 125px;
@@ -139,7 +129,7 @@ body {
     background: rgba(246, 246, 239, 0); }
   #myCarousel h3 {
     text-align: center;
-    font-size: 2.6em;
+    font-size: 1.7em;
     color: #654e2d; }
   #myCarousel .carousel-indicators {
     position: relative; }
@@ -212,5 +202,52 @@ body {
 .gallery ul {
   list-style-type: none;
   padding-left: 0; }
+
+@media (min-width: 480px) and (max-width: 768px) {
+  #footer, #header, #nav .container-fluid, .promo-gallery {
+    padding-right: 8%;
+    padding-left: 8%; }
+
+  #site-slogan, #myCarousel h3 {
+    padding-right: 8%;
+    padding-left: 8%; }
+
+  body {
+    font-size: 10px; }
+
+  #nav {
+    margin-left: 8%; }
+    #nav #logo {
+      font-size: 14px; }
+    #nav ul {
+      float: left !important; }
+
+  #carousel {
+    height: 350px; }
+    #carousel .btn {
+      font-size: 12px;
+      width: 175px; } }
+@media (min-width: 420px) and (max-width: 479px) {
+  #footer, #header, #nav .container-fluid, .promo-gallery {
+    padding-right: 4%;
+    padding-left: 4%; }
+
+  #site-slogan, #myCarousel h3 {
+    padding-right: 4%;
+    padding-left: 4%; }
+
+  body {
+    font-size: 8px; }
+
+  #nav {
+    margin-left: 4%; }
+    #nav ul {
+      float: left !important; }
+
+  #carousel {
+    height: 280px; }
+    #carousel .btn {
+      font-size: 10px;
+      width: 100px; } }
 
 /*# sourceMappingURL=site.css.map */

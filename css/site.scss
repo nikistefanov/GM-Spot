@@ -11,7 +11,8 @@ $first-layer-bgcolor: rgb (78, 67, 22);
 $second-layer-bgcolor: rgb(124, 99, 95);
 $slogan-text-color: rgb(101, 78, 45);
 $custom-font-family: "Myriad Pro";
-
+$font-size-original: 14px;
+$font-size-up: 1.7em;
 %reset {
   margin: 0;
   padding: 0;
@@ -31,11 +32,11 @@ $custom-font-family: "Myriad Pro";
 }
 body {
   @extend %reset;
-  font-size: 12px;
+  font-size: $font-size-original;
   font-family: $custom-font-family, sans-serif;
 }
 #footer {
-  @extend %padding;
+  @extend %padding-right-and-left;
   margin-top: 0.5em;
   color: #fff;
   background: $light-gray;
@@ -66,23 +67,6 @@ body {
   .pull-right {
     padding-right: 0;
   }
-  #logo {
-    margin: 0;
-    font: inherit;
-    font-size: 2.7em;
-    text-transform: lowercase;
-    p:before {
-      content: "";
-      margin: 0 5px 0 0;
-      display: inline-block;
-      width: 1em;
-      height: 1em;
-      border-radius: 100%;
-      border: 3px solid $light-gray;
-      position: relative;
-      top: 1px;
-    }
-  }
   .user-nav {
     text-align: right;
   }
@@ -106,6 +90,23 @@ body {
     .badge {
       opacity: 0.8;
     }
+  }
+}
+#logo {
+  margin: 0;
+  font: inherit;
+  font-size: $font-size-up;
+  text-transform: uppercase;
+  //
+  &:hover {
+    text-decoration: none;
+  }
+  &:before {
+    //content: url(../images/logo.png);
+    //background: url(../images/logo.png) no-repeat;
+    width: $font-size-up;
+    height: $font-size-up;
+    position: relative;
   }
 }
 #nav {
@@ -157,10 +158,10 @@ body {
   @extend %margin-right-and-left;
   h3,
   p {
-    width: 40%;
+    width: 60%;
   }
   h3 {
-    font-size: 2.7em;
+    font-size: $font-size-up;
     text-transform: uppercase;
   }
   p {
@@ -168,25 +169,13 @@ body {
   }
   a {
     width: 250px;
-    height: 38px;
     border-radius: 20px;
     background-color: $btn-green !important;
   }
 }
 #carousel {
-  // background-color: $first-layer-bgcolor;
-  // background-color: rgba($second-layer-bgcolor, .7);
   background: $brown;
-  height: 465px;
-  &:before {
-    display: none;
-  }
-  > .slide {
-    //background: url("../images/sliding-image-1.jpg") no-repeat;
-    background-size: 100% 100%;
-    height: 250px;
-    float: none;
-  }
+  height: 460px;
 }
 #myCarousel {
   height: 125px;
@@ -198,7 +187,7 @@ body {
   h3 {
     @extend %margin-right-and-left;
     text-align: center;
-    font-size: 2.6em;
+    font-size: $font-size-up;
     color: $slogan-text-color;
   }
   .carousel-indicators {
@@ -218,7 +207,6 @@ body {
   background-size: 100% 100%;
   padding-top: 10px;
   padding-bottom: 10px;
-
   .inner-elemets {
     padding: 0;
     margin-bottom: 10px;
@@ -290,5 +278,61 @@ body {
   ul {
     list-style-type: none;
     padding-left: 0;
+  }
+}
+@media (min-width: 480px) and (max-width: 768px) {
+  %padding-right-and-left {
+    padding-right: 8%;
+    padding-left: 8%;
+  }
+  %margin-right-and-left {
+    padding-right: 8%;
+    padding-left: 8%;
+  }
+  body {
+    font-size: 10px;
+  }
+  #nav {
+    margin-left: 8%;
+
+    #logo {
+      font-size: 14px;
+    }
+    ul {
+      float: left !important;
+    }
+  }
+  #carousel {
+    height: 350px;
+    .btn {
+      font-size: 12px;
+      width: 175px;
+    }
+  }
+}
+@media (min-width: 420px) and (max-width: 479px) {
+  %padding-right-and-left {
+    padding-right: 4%;
+    padding-left: 4%;
+  }
+  %margin-right-and-left {
+    padding-right: 4%;
+    padding-left: 4%;
+  }
+  body {
+    font-size: 8px;
+  }
+  #nav {
+    margin-left: 4%;
+    ul {
+      float: left !important;
+    }
+  }
+  #carousel {
+    height: 280px;
+    .btn {
+      font-size: 10px;
+      width: 100px;
+    }
   }
 }

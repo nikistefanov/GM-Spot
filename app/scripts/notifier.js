@@ -1,5 +1,3 @@
-//import 'toastr'
-
 export default {
   success: function(msg) {
     alert(msg);
@@ -8,4 +6,4 @@ export default {
   error: function(msg) {
     //toastr.error(msg);
   }
-}
+};

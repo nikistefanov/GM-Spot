@@ -1,35 +1,6 @@
-//@import 'variables'
-$brown: rgb(69, 41, 23);
-$light: rgb(153, 100, 67);
-$light-gray: rgb(153, 146, 129);
-$dark-gray: rgb(140, 134, 118);
-$more-dark: rgb(33, 57, 69);
-$home-background: rgb(234, 232, 207);
-$hovered-color-text: rgb(238, 238, 186);
-$btn-green: rgb (120, 162, 91);
-$first-layer-bgcolor: rgb (78, 67, 22);
-$second-layer-bgcolor: rgb(124, 99, 95);
-$slogan-text-color: rgb(101, 78, 45);
-$custom-font-family: "Myriad Pro";
-$font-size-original: 14px;
-$font-size-up: 1.7em;
-%reset {
-  margin: 0;
-  padding: 0;
-  list-style: none;
-}
-%padding {
-  padding-top: 0.5em;
-  padding-bottom: 0.5em;
-}
-%padding-right-and-left {
-  padding-right: 16%;
-  padding-left: 16%;
-}
-%margin-right-and-left {
-  padding-right: 16%;
-  padding-left: 16%;
-}
+@import 'variables';
+@import 'resets';
+
 body {
   @extend %reset;
   font-size: $font-size-original;
@@ -100,6 +71,8 @@ body {
   //
   &:hover {
     text-decoration: none;
+    font-style: normal;
+    color: inherit;
   }
   &:before {
     //content: url(../images/logo.png);
@@ -129,7 +102,6 @@ body {
   .navbar-brand {
     text-transform: uppercase;
     &:hover {
-      font-style: italic;
       color: $hovered-color-text;
       background-color: $dark-gray;
     }
@@ -174,7 +146,7 @@ body {
   }
 }
 #carousel {
-  background: $brown;
+  background: $brown, ;
   height: 460px;
 }
 #myCarousel {
@@ -210,7 +182,6 @@ body {
   .inner-elemets {
     padding: 0;
     margin-bottom: 10px;
-    width: 250px;
     height: 280px;
     text-align: center;
     position: relative;
@@ -280,6 +251,12 @@ body {
     padding-left: 0;
   }
 }
+.carousel-indicators {
+  background: url(../images/promo-gallery-background.jpg) no-repeat center;
+  width: 30%;
+  left: 0;
+  margin: auto;
+}
 @media (min-width: 480px) and (max-width: 768px) {
   %padding-right-and-left {
     padding-right: 8%;
@@ -294,7 +271,6 @@ body {
   }
   #nav {
     margin-left: 8%;
-
     #logo {
       font-size: 14px;
     }
@@ -310,7 +286,7 @@ body {
     }
   }
 }
-@media (min-width: 420px) and (max-width: 479px) {
+@media (min-width: 320px) and (max-width: 479px) {
   %padding-right-and-left {
     padding-right: 4%;
     padding-left: 4%;

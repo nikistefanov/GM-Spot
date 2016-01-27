@@ -63,7 +63,9 @@ body {
   font-size: 1.7em;
   text-transform: uppercase; }
   #logo:hover {
-    text-decoration: none; }
+    text-decoration: none;
+    font-style: normal;
+    color: inherit; }
   #logo:before {
     width: 1.7em;
     height: 1.7em;
@@ -87,7 +89,6 @@ body {
     text-transform: uppercase; }
     #nav li:hover,
     #nav .navbar-brand:hover {
-      font-style: italic;
       color: #eeeeba;
       background-color: #8c8676; }
   #nav p:hover {
@@ -146,7 +147,6 @@ body {
   .promo-gallery .inner-elemets {
     padding: 0;
     margin-bottom: 10px;
-    width: 250px;
     height: 280px;
     text-align: center;
     position: relative;
@@ -203,6 +203,12 @@ body {
   list-style-type: none;
   padding-left: 0; }
 
+.carousel-indicators {
+  background: url(../images/promo-gallery-background.jpg) no-repeat center;
+  width: 30%;
+  left: 0;
+  margin: auto; }
+
 @media (min-width: 480px) and (max-width: 768px) {
   #footer, #header, #nav .container-fluid, .promo-gallery {
     padding-right: 8%;
@@ -227,7 +233,7 @@ body {
     #carousel .btn {
       font-size: 12px;
       width: 175px; } }
-@media (min-width: 420px) and (max-width: 479px) {
+@media (min-width: 320px) and (max-width: 479px) {
   #footer, #header, #nav .container-fluid, .promo-gallery {
     padding-right: 4%;
     padding-left: 4%; }

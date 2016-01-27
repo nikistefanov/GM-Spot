@@ -1,23 +1,28 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8">
-    <title>Games and movies spot</title>
-    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css"/>
-    <link rel="stylesheet" href="/css/site.css">
-    <link rel="shortcut icon" type="image/png" href="favicon.png"/>
-    <script src="/bower_components/toastr/toastr.js"></script>
-    <script src="https://www.parsecdn.com/js/parse-1.6.12.min.js"></script>
-  </head>
-  <body>
-    <div id="wrapper" class="container">
-      <div id="carousel" class="row">
-        <header id="header" class="row">
-          <div class="col-md-4 user-nav pull-right">
 
-          </div>
-        </header>
-        <nav id="nav" class="navbar navbar-default row">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Games and movies spot</title>
+  <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css" />
+  <link rel="stylesheet" href="/css/site.css">
+  <link rel="shortcut icon" type="image/png" href="favicon.png" />
+  <script src="/bower_components/toastr/toastr.js"></script>
+  <script src="https://www.parsecdn.com/js/parse-1.6.12.min.js"></script>
+  <script type="text/javascript" src="bower_components/jquery/dist/jquery.js">
+  </script>
+</head>
+
+<body>
+  <div id="wrapper" class="container">
+    <div id="carousel" class="row">
+      <header id="header" class="row">
+        <div class="col-md-4 user-nav pull-right">
+
+        </div>
+      </header>
+      <nav id="nav" class="navbar navbar-default row">
         <div class="container-fluid col-md-12">
           <div class="navbar-header">
             <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
@@ -26,7 +31,9 @@
               <span class="icon-bar"></span>
               <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand active" href="#/home"><p id="logo">GM Spot</p></a>
+            <a class="navbar-brand active" href="#/home">
+              <p id="logo">GM Spot</p>
+            </a>
           </div>
           <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav pull-right">
@@ -39,47 +46,46 @@
         </div>
       </nav>
       <div id="site-slogan" class="row">
-          <h3>
-            Your place for buying, selling or giving away games, movies and books!
-          </h3>
-          <p>
-            Are you bored with your current games, sell them and buy new ones. Or just do a good deed and give some for free, make a present :)
-          </p>
-          <a class="btn btn-success" href="#/games">Try now</a>
+        <h3>
+          Your place for buying, selling or giving away games, movies and books!
+        </h3>
+        <p>
+          Are you bored with your current games, sell them and buy new ones. Or just do a good deed and give some for free, make a present :)
+        </p>
+        <a class="btn btn-success" href="#/games">Try now</a>
       </div>
-      </div>
-      <div id="main">
-        <div id="products">
-
-        </div>
-      </div>
-      <footer id="footer" class="row">
-        <div class="col-md-8">
-          <ul class="my-nav">
-            <li><a href="#">About us</a></li>
-            <li><a href="#">Contacts</a></li>
-          </ul>
-        </div>
-        <p class="col-md-4 copy">&copy; GM-Spot by Nikolay Stefanov</p>
-      </footer>
     </div>
-    <script src="bower_components/system.js/dist/system.js"></script>
-    <script src="node_modules/babel-core/browser.js"></script>
-    <script type="text/babel">
-      System.config({
-          baseURL: '/app',
-          transpiler: 'babel',
-          map: {
-              babel: '/node_modules/babel-core/browser.js',
-              sammy: '/bower_components/sammy/lib/sammy.js',
-              jquery: '/bower_components/jquery/dist/jquery.js',
-              bootstrapUI: '/bower_components/bootstrap/dist/js/bootstrap.js',
-              handlebars: '/bower_components/handlebars/handlebars.js'
-              //toastr: '/bower_components/toastr/toastr.js'
-          }
-      });
+    <div id="main">
+      <div id="products">
 
-      System.import('app.js');
-    </script>
-  </body>
+      </div>
+    </div>
+    <footer id="footer" class="row">
+      <div class="col-md-8">
+        <ul class="my-nav">
+          <li><a href="#">About us</a></li>
+          <li><a href="#">Contacts</a></li>
+        </ul>
+      </div>
+      <p class="col-md-4 copy">&copy; GM-Spot by Nikolay Stefanov</p>
+    </footer>
+  </div>
+  <script src="bower_components/system.js/dist/system.js"></script>
+  <script src="node_modules/babel-core/browser.js"></script>
+  <script src="bower_components/toastr/toastr.js"></script>
+  <script type="text/javascript" src="cufon-yui.js"></script>
+  <script type="text/javascript" src="League_Gothic_400.font.js"></script>
+  <!-- <script type="text/javascript">
+    Cufon.replace('h2');
+    Cufon.replace('h3');
+    Cufon.replace('h4');
+    Cufon.replace('p');
+    Cufon.replace('a');
+  </script> -->
+  <script type="text/babel">
+    System.config({ baseURL: '/app', transpiler: 'babel', map: { babel: '/node_modules/babel-core/browser.js', sammy: '/bower_components/sammy/lib/sammy.js', jquery: '/bower_components/jquery/dist/jquery.js', bootstrapUI: '/bower_components/bootstrap/dist/js/bootstrap.js',
+    handlebars: '/bower_components/handlebars/handlebars.js' } }); System.import('app.js');
+  </script>
+</body>
+
 </html>

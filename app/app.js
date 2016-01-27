@@ -1,18 +1,18 @@
-import 'sammy'
-import 'jquery'
-import 'bootstrapUI'
-import Handlebars from 'handlebars'
-import templates from 'scripts/templates.js'
-import eventLoader from 'scripts/eventLoader.js'
-import notifier from 'scripts/notifier.js'
-import data from 'scripts/data.js'
+import 'sammy';
+import 'jquery';
+import 'bootstrapUI';
+import Handlebars from 'handlebars';
+import templates from 'scripts/templates.js';
+import eventLoader from 'scripts/eventLoader.js';
+import notifier from 'scripts/notifier.js';
+import data from 'scripts/data.js';
 
 var containerId = '#main',
   $container = $(containerId);
 
 var sammyApp = Sammy(containerId, function() {
   this.get('#/', function() {
-    this.redirect('#/home')
+    this.redirect('#/home');
   });
 
   this.get('#/home', function() {
@@ -22,7 +22,7 @@ var sammyApp = Sammy(containerId, function() {
           html = template(results[0]);
 
         $container.html(html);
-      })
+      });
 
     eventLoader.gameEvents($container);
   });
@@ -34,7 +34,21 @@ var sammyApp = Sammy(containerId, function() {
           html = template(results[0]);
 
         $container.html(html);
-      })
+      });
+
+    eventLoader.gameEvents($container);
+  });
+
+  this.get('#/games/game-info/:id', function(context) {
+    var id = context.params.id;
+
+    Promise.all([data.games.get(id), templates.load('game-info')])
+      .then(function(results) {
+        var template = Handlebars.compile(results[1]),
+          html = template(results[0]);
+
+        $container.html(html);
+      });
 
     eventLoader.gameEvents($container);
   });
@@ -43,7 +57,7 @@ var sammyApp = Sammy(containerId, function() {
     templates.load('login')
       .then(function(templateHtml) {
         $container.html(templateHtml);
-      })
+      });
 
     eventLoader.loginPageEvents($container);
   });
@@ -52,7 +66,7 @@ var sammyApp = Sammy(containerId, function() {
     templates.load('register')
       .then(function(templateHtml) {
         $container.html(templateHtml);
-      })
+      });
 
     eventLoader.loginPageEvents($container);
   });
@@ -64,7 +78,7 @@ var sammyApp = Sammy(containerId, function() {
         html = template(results[0]);
 
       $('.user-nav').append(html);
-    })
+    });
   eventLoader.navigationEvents($('.user-nav'));
 });
 

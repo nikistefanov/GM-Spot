@@ -1,5 +1,5 @@
-import data from 'scripts/data.js'
-import notifier from 'scripts/notifier.js'
+import data from 'scripts/data.js';
+import notifier from 'scripts/notifier.js';
 
 
 export default {
@@ -14,7 +14,7 @@ export default {
         .then(function() {
           notifier.success("Logged in!");
           document.location = document.location.origin;
-        })
+        });
     });
 
     $container.on('click', '#btn-reg', function(ev) {
@@ -27,8 +27,8 @@ export default {
         .then(function() {
           notifier.success("Registered!");
           document.location = document.location.origin;
-        })
-    })
+        });
+    });
   },
 
   navigationEvents: function($container) {
@@ -37,7 +37,7 @@ export default {
         .then(function() {
           notifier.success("Logged out!");
           document.location = document.location.origin;
-        })
+        });
     });
     $container.on('click', '#btn-search', function(ev) {
       ev.stopPropagation();
@@ -85,7 +85,7 @@ export default {
         })
         .catch(function(err) {
           notifier.err(err);
-        })
+        });
     });
   }
-}
+};

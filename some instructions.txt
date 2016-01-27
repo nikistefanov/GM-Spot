@@ -10,11 +10,13 @@ thi is to skip cross origin
 
 ## when using sammy and get errors all the time cuz of jquery, go to the bower_components/sammy/lib/sammy.js and type import 'jquery' (or the whole path to jquery.js)
 
-
-## padashtoto menu - z-index - float na ul none i width i position absolute na gorniqt element
+Answered:
 ## Width да остане 960px а не да слагам насвякъде margin и padding
 ## Home как да се центрират 3-те sections
-## Когато се хавърне item от navbar-a height да е по малък (показано в условието)
+
+
+## padashtoto menu - z-index - float na ul none i width i position absolute na gorniqt element
+## Когато се хавърне item от navbar-a height да е по малък (показано в условието) - da se dobavi edin class current na active page-a
 ## Когато логото се хавърне да не се променя  - edin class selected i na nego font-style: italic; - pred a i sled nego drug content
 ## Как да се използват два background-a за един (с opacity) - sus zapetaika
 ## Carousel - да се махнат стрелките и да се сложат точки (js не работи от началото - трябва да се превърти за да започне да ги мести) - carousel-indicators това са точките

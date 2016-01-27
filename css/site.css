@@ -62,10 +62,6 @@ body {
   font: inherit;
   font-size: 1.7em;
   text-transform: uppercase; }
-  #logo:hover {
-    text-decoration: none;
-    font-style: normal;
-    color: inherit; }
   #logo:before {
     width: 1.7em;
     height: 1.7em;
@@ -90,7 +86,19 @@ body {
     #nav li:hover,
     #nav .navbar-brand:hover {
       color: #eeeeba;
-      background-color: #8c8676; }
+      font-style: italic;
+      background-color: #999281; }
+  #nav .current li::before,
+  #nav .current li::after {
+    content: "";
+    display: block;
+    width: 100%;
+    height: 2.5px;
+    background-color: #8c8676; }
+  #nav .active:hover {
+    font-style: normal;
+    color: white;
+    background-color: #999281; }
   #nav p:hover {
     font-style: bold;
     color: inherit; }
@@ -113,10 +121,10 @@ body {
     text-transform: uppercase; }
   #site-slogan p {
     font-size: 1.2em; }
-  #site-slogan a {
+  #site-slogan .btn-success {
     width: 250px;
     border-radius: 20px;
-    background-color: rgb 120, 162, 91 !important; }
+    background: url(../images/home-button-background.png) no-repeat center !important; }
 
 #carousel {
   background: #452917;
@@ -205,9 +213,17 @@ body {
 
 .carousel-indicators {
   background: url(../images/promo-gallery-background.jpg) no-repeat center;
-  width: 30%;
+  width: 20%;
+  padding-top: 5px;
   left: 0;
-  margin: auto; }
+  margin: auto;
+  border-radius: 10px 10px 0 0; }
+  .carousel-indicators li {
+    background-color: #c1bfa6;
+    border: 0; }
+  .carousel-indicators .active {
+    background-color: #675944;
+    border-color: #c1bfa6; }
 
 @media (min-width: 480px) and (max-width: 768px) {
   #footer, #header, #nav .container-fluid, .promo-gallery {

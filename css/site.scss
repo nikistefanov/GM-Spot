@@ -1,6 +1,5 @@
 @import 'variables';
 @import 'resets';
-
 body {
   @extend %reset;
   font-size: $font-size-original;
@@ -10,7 +9,7 @@ body {
   @extend %padding-right-and-left;
   margin-top: 0.5em;
   color: #fff;
-  background: $light-gray;
+  background: $navbar-background-color;
   a {
     color: inherit;
     background: none;
@@ -55,7 +54,7 @@ body {
     li {
       &:hover {
         border-radius: 3px;
-        background-color: rgba($light-gray, .6);
+        background-color: rgba($navbar-background-color, .6);
       }
     }
     .badge {
@@ -68,12 +67,6 @@ body {
   font: inherit;
   font-size: $font-size-up;
   text-transform: uppercase;
-  //
-  &:hover {
-    text-decoration: none;
-    font-style: normal;
-    color: inherit;
-  }
   &:before {
     //content: url(../images/logo.png);
     //background: url(../images/logo.png) no-repeat;
@@ -84,13 +77,13 @@ body {
 }
 #nav {
   color: white;
-  background: $light-gray;
+  background: $navbar-background-color;
   margin-left: 16%;
   border-radius: 0;
   border: 0;
   margin-bottom: 0;
   ul {
-    background: $light-gray;
+    background: $navbar-background-color;
   }
   a {
     color: inherit;
@@ -103,8 +96,24 @@ body {
     text-transform: uppercase;
     &:hover {
       color: $hovered-color-text;
-      background-color: $dark-gray;
+      font-style: italic;
+      background-color: $navbar-background-color;
     }
+  }
+  .current {
+    li::before,
+    li::after {
+      content: "";
+      display: block;
+      width: 100%;
+      height: 2.5px;
+      background-color: $navbar-background-color-hovered;
+    }
+  }
+  .active:hover {
+    font-style: normal;
+    color: white;
+    background-color: $navbar-background-color;
   }
   p {
     &:hover {
@@ -139,14 +148,15 @@ body {
   p {
     font-size: 1.2em;
   }
-  a {
+  .btn-success {
     width: 250px;
     border-radius: 20px;
-    background-color: $btn-green !important;
+    background: url(../images/home-button-background.png) no-repeat center !important;
   }
 }
 #carousel {
-  background: $brown, ;
+  //background: $site-second-color-alpha, $site-first-color no-repeat;
+  background: $site-color;
   height: 460px;
 }
 #myCarousel {
@@ -253,9 +263,19 @@ body {
 }
 .carousel-indicators {
   background: url(../images/promo-gallery-background.jpg) no-repeat center;
-  width: 30%;
+  width: 20%;
+  padding-top: 5px;
   left: 0;
   margin: auto;
+  border-radius: 10px 10px 0 0;
+  li {
+    background-color: $carousel-indicators-background-color;
+    border: 0;
+  }
+  .active {
+    background-color: $carousel-indicators-color;
+    border-color: $carousel-indicators-background-color;
+  }
 }
 @media (min-width: 480px) and (max-width: 768px) {
   %padding-right-and-left {

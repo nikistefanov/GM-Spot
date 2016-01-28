@@ -7,7 +7,7 @@ body, .my-nav {
   padding-top: 0.5em;
   padding-bottom: 0.5em; }
 
-#footer, #header, #nav .container-fluid, .promo-gallery {
+#footer, #header, #nav .container-fluid, .promo-gallery, .gallery {
   padding-right: 16%;
   padding-left: 16%; }
 
@@ -58,14 +58,7 @@ body {
       opacity: 0.8; }
 
 #logo {
-  margin: 0;
-  font: inherit;
-  font-size: 1.7em;
-  text-transform: uppercase; }
-  #logo:before {
-    width: 1.7em;
-    height: 1.7em;
-    position: relative; }
+  margin: -5px 0 0; }
 
 #nav {
   color: white;
@@ -201,15 +194,58 @@ body {
 .genres {
   border-bottom: 1px solid #ccc; }
 
-.gallery .description {
+.game-info .description {
   height: 50px;
   overflow: hidden; }
-.gallery img {
+.game-info img {
   width: 130px;
   height: 150px; }
-.gallery ul {
+.game-info ul {
   list-style-type: none;
   padding-left: 0; }
+
+.gallery .gallery-inner-element {
+  height: 70px;
+  padding: 0; }
+  .gallery .gallery-inner-element .thumbnail {
+    padding: 0;
+    height: 70px;
+    border: 0; }
+    .gallery .gallery-inner-element .thumbnail img {
+      margin-left: 0;
+      width: 56px;
+      height: 64px; }
+    .gallery .gallery-inner-element .thumbnail a {
+      padding: 0;
+      margin-right: 15px;
+      width: 56px;
+      height: 64px;
+      position: relative;
+      float: left; }
+    .gallery .gallery-inner-element .thumbnail .game-info-aside {
+      width: 90%; }
+      .gallery .gallery-inner-element .thumbnail .game-info-aside h5 {
+        margin: 0;
+        font-size: 12px; }
+    .gallery .gallery-inner-element .thumbnail .price-tag {
+      display: block;
+      background: url(../images/price-tag.png) no-repeat bottom left;
+      padding-left: 8px;
+      position: absolute;
+      top: 12px;
+      left: -8px;
+      font-size: 10px; }
+      .gallery .gallery-inner-element .thumbnail .price-tag span {
+        display: block;
+        margin-left: -6px;
+        padding: 5px 5px 0 0;
+        height: 31px;
+        color: #fff;
+        text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5);
+        font-style: normal; }
+.gallery .platform {
+  font-family: "Georgia";
+  font-size: 12px; }
 
 .carousel-indicators {
   background: url(../images/promo-gallery-background.jpg) no-repeat center;
@@ -226,7 +262,7 @@ body {
     border-color: #c1bfa6; }
 
 @media (min-width: 480px) and (max-width: 768px) {
-  #footer, #header, #nav .container-fluid, .promo-gallery {
+  #footer, #header, #nav .container-fluid, .promo-gallery, .gallery {
     padding-right: 8%;
     padding-left: 8%; }
 
@@ -239,8 +275,6 @@ body {
 
   #nav {
     margin-left: 8%; }
-    #nav #logo {
-      font-size: 14px; }
     #nav ul {
       float: left !important; }
 
@@ -250,7 +284,7 @@ body {
       font-size: 12px;
       width: 175px; } }
 @media (min-width: 320px) and (max-width: 479px) {
-  #footer, #header, #nav .container-fluid, .promo-gallery {
+  #footer, #header, #nav .container-fluid, .promo-gallery, .gallery {
     padding-right: 4%;
     padding-left: 4%; }
 

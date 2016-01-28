@@ -63,17 +63,7 @@ body {
   }
 }
 #logo {
-  margin: 0;
-  font: inherit;
-  font-size: $font-size-up;
-  text-transform: uppercase;
-  &:before {
-    //content: url(../images/logo.png);
-    //background: url(../images/logo.png) no-repeat;
-    width: $font-size-up;
-    height: $font-size-up;
-    position: relative;
-  }
+  margin: -5px 0 0;
 }
 #nav {
   color: white;
@@ -246,7 +236,7 @@ body {
 .genres {
   border-bottom: 1px solid #ccc;
 }
-.gallery {
+.game-info {
   .thumbnail {}
   .description {
     height: 50px;
@@ -259,6 +249,60 @@ body {
   ul {
     list-style-type: none;
     padding-left: 0;
+  }
+}
+.gallery {
+  @extend %padding-right-and-left;
+  .gallery-inner-element {
+    height: 70px;
+    padding: 0;
+    .thumbnail {
+      padding: 0;
+      height: 70px;
+      border: 0;
+      img {
+        margin-left: 0;
+        width: 56px;
+        height: 64px;
+      }
+      a {
+        padding: 0;
+        margin-right: 15px;
+        width: 56px;
+        height: 64px;
+        position: relative;
+        float: left;
+      }
+      .game-info-aside {
+        width: 90%;
+        h5 {
+          margin: 0;
+          font-size: 12px;
+        }
+      }
+      .price-tag {
+        display: block;
+        background: url(../images/price-tag.png) no-repeat bottom left;
+        padding-left: 8px;
+        position: absolute;
+        top: 12px;
+        left: -8px;
+        font-size: 10px;
+        span {
+          display: block;
+          margin-left: -6px;
+          padding: 5px 5px 0 0;
+          height: 31px;
+          color: #fff;
+          text-shadow: 1px 1px 1px rgba(0,0,0,0.5);
+          font-style: normal;
+        }
+      }
+    }
+  }
+  .platform {
+    font-family: $gallery-font-family;
+    font-size: $gallery-font-size;
   }
 }
 .carousel-indicators {
@@ -291,9 +335,6 @@ body {
   }
   #nav {
     margin-left: 8%;
-    #logo {
-      font-size: 14px;
-    }
     ul {
       float: left !important;
     }

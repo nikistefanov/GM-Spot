@@ -40,11 +40,9 @@ export default {
           var currentGame;
           data.map(function(item) {
             if (item.id == gameId) {
-              console.log(item);
               currentGame = item;
             }
           });
-          console.log(currentGame);
           var currentUserId = Parse.User.current() ? Parse.User.current().id : '';
           currentGame.isOwner = currentUserId === currentGame.ownerId;
           resolve({

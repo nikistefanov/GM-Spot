@@ -1,5 +1,7 @@
 ## lecture to help with the site - GM Spot
 http://telerikacademy.com/Courses/LectureResources/Video/6750/%D0%92%D0%B8%D0%B4%D0%B5%D0%BE-3-%D1%81%D0%B5%D0%BF%D1%82%D0%B5%D0%BC%D0%B2%D1%80%D0%B8-2015-%D0%95%D0%B2%D0%BB%D0%BE%D0%B3%D0%B8
+## site for help:
+http://www.elegantthemes.com/demo/?theme=MyCuisine
 
 ## to install http server
 > npm install -g http-server
@@ -29,6 +31,22 @@ Answered:
 ## Как да използвам ID на продукта за да го отделя в нов адрес и там да дам повече инфо за него. Как да заредя темплейта с handlebars само за този даден продукт?
 
 ## za carousel background: url("image ot photoshop") no-repeat bottom center
+
+
+>>>TODO<<<
+- background-a da se smenq na home, games, movies suglasno psd-to
+- helper za handlebars za home page da listva poslednite 3 igri i filmi v dvete koloni i da se naglasi location
+- da se opravqt routes da se pokazvat kato se obikalq po linkovete (breadcrumbs css)
+- da se dobavqt start (rating) v carousel
+
+*** ako ostane vreme ***
+- edin button v login-logout My products - tam da sa games, movies, books --> handlebars template
+{{#games}}
+  {{#if isOwner}}
+    da listva vsi4ki produkti
+  {{/if}}
+{{/games}} neshto takova
+
 
 ## za google api -
 <style>

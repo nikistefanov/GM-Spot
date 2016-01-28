@@ -13,7 +13,7 @@ export default {
       data.users.login(username, password)
         .then(function() {
           notifier.success("Logged in!");
-          document.location = document.location.origin;
+          location.reload();
         });
     });
 
@@ -81,7 +81,7 @@ export default {
       data.games.remove(gameId)
         .then(function(data) {
           notifier.success('Game removed.');
-          location.reload();
+          document.location = document.location.href = '#/games';
         })
         .catch(function(err) {
           notifier.err(err);

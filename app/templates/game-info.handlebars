@@ -1,0 +1,33 @@
+<div class="row game-info">
+  {{#game}}
+  <div class="col-sm-6 col-md-4">
+    <div class="thumbnail" >
+      <div class="row">
+        <img class="col-md-6" src="{{img}}" alt="game-poster">
+        <div class="col-md-6">
+          <h5>{{title}}</h5>
+          <p>
+            <span>Price: {{price}} BGN</span>
+          </p>
+          <ul>Genres:
+            {{#each genres}}
+              <li><i class="glyphicon glyphicon-chevron-right"></i>{{this}}</li>
+            {{/each}}
+          </ul>
+        </div>
+      </div>
+      <div class="caption" data-game-id="{{id}}">
+        <p>
+          <span>For: {{platform}}</span>
+        </p>
+        <p class="description">{{description}}</p>
+        {{#if isOwner}}
+        <p><button id="btn-delete-game" class="btn btn-danger" name="button">Delete</button></p>
+        {{else}}
+        <p><a href="#/games/{{id}}" id="btn-buy-game" class="btn btn-primary" name="button">Buy</a></p>
+        {{/if}}
+      </div>
+      {{/game}}
+    </div>
+  </div>
+</div>

@@ -8,10 +8,29 @@
   <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css" />
   <link rel="stylesheet" href="/css/site.css">
   <link rel="shortcut icon" type="image/png" href="favicon.png" />
+  <link rel="stylesheet" href="bower_components/five-star-rating/css/rating.min.css">
   <script src="/bower_components/toastr/toastr.js"></script>
   <script src="https://www.parsecdn.com/js/parse-1.6.12.min.js"></script>
   <script type="text/javascript" src="bower_components/jquery/dist/jquery.js">
   </script>
+  <style>
+    #gmaps-border {
+      padding: 5px;
+      border: 1px solid #e5e2c6;
+      width: 246px;
+      height: 171px;
+      background: #fff;
+      -webkit-box-shadow: 1px 1px 1px #fff;
+      -moz-box-shadow: 1px 1px 1px #fff;
+      box-shadow: 1px 1px 1px #fff;
+      margin-bottom: 12px;
+    }
+
+    #gmaps-container-1 {
+      width: 244px;
+      height: 171px;
+    }
+  </style>
 </head>
 
 <body>
@@ -61,23 +80,13 @@
       </div>
     </div>
     <footer id="footer" class="row">
-      <div class="col-md-8">
-        <ul class="my-nav">
-          <li><a href="#">About us</a></li>
-          <li><a href="#">Contacts</a></li>
-        </ul>
-      </div>
-      <p class="col-md-4 copy">&copy; GM-Spot by Nikolay Stefanov</p>
+      <p class="copy">&copy; GM-Spot by Nikolay Stefanov</p>
     </footer>
   </div>
   <script src="bower_components/system.js/dist/system.js"></script>
   <script src="node_modules/babel-core/browser.js"></script>
   <script src="bower_components/toastr/toastr.js"></script>
-  <script type="text/javascript" src="cufon-yui.js"></script>
-  <script type="text/javascript" src="League_Gothic_400.font.js"></script>
-  <script type="text/javascript">
-    Cufon.replace('#logo');
-  </script>
+  <script src="bower_components/five-star-rating//js/dist/rating.min.js"></script>
   <script type="text/babel">
     System.config({ baseURL: '/app', transpiler: 'babel', map: { babel: '/node_modules/babel-core/browser.js', sammy: '/bower_components/sammy/lib/sammy.js', jquery: '/bower_components/jquery/dist/jquery.js', bootstrapUI: '/bower_components/bootstrap/dist/js/bootstrap.js',
     handlebars: '/bower_components/handlebars/handlebars.js' } }); System.import('app.js');

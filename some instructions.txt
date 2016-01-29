@@ -3,6 +3,8 @@ http://telerikacademy.com/Courses/LectureResources/Video/6750/%D0%92%D0%B8%D0%B4
 ## site for help:
 http://www.elegantthemes.com/demo/?theme=MyCuisine
 
+## in bootstrap.js at 732! That's the row that triggers the dropdown!
+
 ## to install http server
 > npm install -g http-server
 

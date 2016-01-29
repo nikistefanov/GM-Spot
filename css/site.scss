@@ -5,29 +5,61 @@ body {
   font-size: $font-size-original;
   font-family: $custom-font-family, sans-serif;
 }
+.clearfix::after {
+  content: "";
+  display: table;
+  clear: both;
+}
+hr {
+  margin: 0;
+  border: 0;
+  height: 1px;
+  background-image: linear-gradient(to right, rgba(33, 33, 33, 0), rgba(33, 33, 33, 0.75), rgba(33, 33, 33, 0));
+}
 #footer {
   @extend %padding-right-and-left;
   margin-top: 0.5em;
   color: #fff;
   background: $navbar-background-color;
-  a {
-    color: inherit;
-    background: none;
-    &:hover {
-      text-decoration: underline;
-    }
-  }
-  .my-nav {
-    li + li:before {
-      content: "|";
-      margin: 0 3px;
-      display: inline-block;
-      vertical-align: middle;
-    }
-  }
   .copy {
     margin: 0;
-    text-align: right;
+    text-align: center;
+  }
+}
+.footer {
+  text-align: center;
+  .btn-games {
+    color: white;
+    width: 250px;
+    position: relative;
+    top: -20px;
+    border-radius: 20px;
+    background: url(../images/btn-down.png) no-repeat center !important;
+  }
+  .footer-nav {
+    color: $thumbnail-title-color;
+    text-align: center;
+    text-transform: uppercase;
+    ul {
+      padding: 0;
+      display: inline-block;
+    }
+    li {
+      display: inline-block;
+    }
+    li:nth-of-type(2) {
+      margin: 0 20px;
+      vertical-align: middle;
+    }
+    a {
+      color: inherit;
+      background: none;
+      &:hover {
+        color: $platform-text-color;
+        font-style: italic;
+        text-decoration: none;
+      }
+    }
   }
 }
 #header {
@@ -72,8 +104,18 @@ body {
   border-radius: 0;
   border: 0;
   margin-bottom: 0;
+  .navbar-header {
+    position: absolute;
+    width: 100%;
+  }
+  .navbar-toggle {
+    position: relative;
+    float: right;
+    right: 70px;
+  }
   ul {
     background: $navbar-background-color;
+    margin-left: 0;
   }
   a {
     color: inherit;
@@ -126,7 +168,7 @@ body {
 }
 #site-slogan {
   color: white;
-  @extend %margin-right-and-left;
+  @extend %padding-right-and-left;
   h3,
   p {
     width: 60%;
@@ -157,13 +199,10 @@ body {
     background: rgba(246, 246, 239, 0);
   }
   h3 {
-    @extend %margin-right-and-left;
+    @extend %padding-right-and-left;
     text-align: center;
     font-size: $font-size-up;
     color: $slogan-text-color;
-  }
-  .carousel-indicators {
-    position: relative;
   }
 }
 .my-nav {
@@ -180,14 +219,68 @@ body {
   padding-top: 10px;
   padding-bottom: 10px;
   .inner-elemets {
-    padding: 0;
+    padding: 0 2px;
     margin-bottom: 10px;
     height: 280px;
     text-align: center;
     position: relative;
-    border: 1px solid red;
-    background-size: cover;
-    background-clip: content-box;
+    #books-section {
+      .thumbnail {
+        border: 0;
+      }
+      img {
+        margin-left: 0;
+        width: 56px;
+        height: 64px;
+        border: 5px solid white;
+        position: relative;
+        float: left;
+      }
+    }
+    iframe {
+      width: 90%;
+      border: 5px solid white;
+      position: relative;
+      float: left;
+    }
+    .location-text {
+      margin-top: 10px;
+      font-family: $gallery-font-family;
+      font-size: $gallery-font-size;
+      color: $platform-text-color;
+      position: relative;
+      float: left;
+      p {
+        text-align: left;
+        span {
+          text-transform: uppercase;
+        }
+        time {
+          color: $thumbnail-title-color;
+        }
+      }
+    }
+    .inner-elemets-title {
+      text-align: left;
+      font-size: 1.05em;
+      padding-left: 2px;
+      color: $inner-elemets-title-color;
+      text-transform: uppercase;
+    }
+    .thumbnail {
+      margin-bottom: 0;
+      background-color: inherit;
+      .game-info-aside {
+        text-align: left;
+        padding-left: 15px;
+        padding-top: 5px;
+        width: 100%;
+      }
+    }
+  }
+  .middle {
+    margin-top: 15px;
+    margin-bottom: 15px;
   }
 }
 .row {
@@ -237,7 +330,9 @@ body {
   border-bottom: 1px solid #ccc;
 }
 .game-info {
-  .thumbnail {}
+  .thumbnail {
+    background-color: inherit;
+  }
   .description {
     height: 50px;
     overflow: hidden;
@@ -253,65 +348,72 @@ body {
 }
 .gallery {
   @extend %padding-right-and-left;
-  .gallery-inner-element {
-    height: 70px;
+}
+.gallery-inner-element {
+  height: 70px;
+  padding: 0;
+  .thumbnail {
     padding: 0;
-    .thumbnail {
+    height: 70px;
+    border: 0;
+    background-color: inherit;
+    img {
+      margin-left: 0;
+      width: 56px;
+      height: 64px;
+      border: 5px solid white;
+    }
+    a {
       padding: 0;
-      height: 70px;
-      border: 0;
-      img {
-        margin-left: 0;
-        width: 56px;
-        height: 64px;
+      margin-right: 15px;
+      width: 56px;
+      height: 64px;
+      position: relative;
+      float: left;
+    }
+    .game-info-aside {
+      width: 90%;
+      h5 {
+        margin: 0;
+        font-size: 12px;
+        color: $thumbnail-title-color;
       }
-      a {
-        padding: 0;
-        margin-right: 15px;
-        width: 56px;
-        height: 64px;
-        position: relative;
-        float: left;
-      }
-      .game-info-aside {
-        width: 90%;
-        h5 {
-          margin: 0;
-          font-size: 12px;
-        }
-      }
-      .price-tag {
+    }
+    .price-tag {
+      display: block;
+      background: url(../images/price-tag.png) no-repeat bottom left;
+      padding-left: 8px;
+      position: absolute;
+      top: 12px;
+      left: -8px;
+      font-size: 10px;
+      span {
         display: block;
-        background: url(../images/price-tag.png) no-repeat bottom left;
-        padding-left: 8px;
-        position: absolute;
-        top: 12px;
-        left: -8px;
-        font-size: 10px;
-        span {
-          display: block;
-          margin-left: -6px;
-          padding: 5px 5px 0 0;
-          height: 31px;
-          color: #fff;
-          text-shadow: 1px 1px 1px rgba(0,0,0,0.5);
-          font-style: normal;
-        }
+        margin-left: -6px;
+        padding: 5px 5px 0 0;
+        height: 31px;
+        color: #fff;
+        text-shadow: 1px 1px 1px rgba(0,0,0,0.5);
+        font-style: normal;
       }
     }
   }
-  .platform {
-    font-family: $gallery-font-family;
-    font-size: $gallery-font-size;
-  }
+}
+.platform {
+  font-family: $gallery-font-family;
+  font-size: $gallery-font-size;
+  color: $platform-text-color;
+  font-style: italic;
 }
 .carousel-indicators {
-  background: url(../images/promo-gallery-background.jpg) no-repeat center;
-  width: 20%;
-  padding-top: 5px;
+  background: url(../images/promo-gallery-background.png) no-repeat center;
+  //height: 30%;
+  height: 35px;
+  position: relative;
+  bottom: 30px;
+  padding-top: 10px;
   left: 0;
   margin: auto;
-  border-radius: 10px 10px 0 0;
   li {
     background-color: $carousel-indicators-background-color;
     border: 0;
@@ -321,14 +423,36 @@ body {
     border-color: $carousel-indicators-background-color;
   }
 }
-@media (min-width: 480px) and (max-width: 768px) {
+.carousel-inner {
+  bottom: 30px;
+}
+.rating {
+  text-align: center;
+  position: relative;
+  bottom: 20px;
+  font-size: 1.3em;
+  unicode-bidi: bidi-override;
+  direction: rtl;
+}
+.rating > span {
+  display: inline-block;
+  position: relative;
+  width: 1.1em;
+}
+.rating > span:hover:before,
+.rating > span:hover ~ span:before {
+  content: "\2605";
+  position: absolute;
+}
+@media (min-width: 480px) and (max-width: 767px) {
   %padding-right-and-left {
     padding-right: 8%;
     padding-left: 8%;
   }
-  %margin-right-and-left {
-    padding-right: 8%;
-    padding-left: 8%;
+  .navbar-collapse {
+    position: relative;
+    top: 50px;
+    height: 250px;
   }
   body {
     font-size: 10px;
@@ -347,22 +471,37 @@ body {
     }
   }
 }
-@media (min-width: 320px) and (max-width: 479px) {
+@media (min-width: 390px) and (max-width: 479px) {
   %padding-right-and-left {
     padding-right: 4%;
     padding-left: 4%;
   }
-  %margin-right-and-left {
-    padding-right: 4%;
-    padding-left: 4%;
+  .navbar-collapse {
+    position: relative;
+    top: 50px;
+    height: 225px;
   }
   body {
     font-size: 8px;
   }
+  .my-nav {
+    font-size: 10px;
+  }
   #nav {
     margin-left: 4%;
+    .navbar-toggle {
+      right: 0;
+    }
     ul {
       float: left !important;
+    }
+  }
+  .carousel-indicators {
+    li,
+    .active {
+      margin: 0;
+      width: 10px;
+      height: 10px;
     }
   }
   #carousel {
@@ -370,6 +509,125 @@ body {
     .btn {
       font-size: 10px;
       width: 100px;
+    }
+  }
+}
+@media (min-width: 320px) and (max-width: 389px) {
+  %padding-right-and-left {
+    padding-right: 4%;
+    padding-left: 4%;
+  }
+  body {
+    font-size: 8px;
+  }
+  #logo {
+    width: 120px;
+  }
+  .navbar-collapse {
+    position: relative;
+    top: 50px;
+    height: 175px;
+    .navbar-nav {
+      a {
+        padding-top: 2.5px;
+        padding-bottom: 2.5px;
+      }
+    }
+  }
+  .my-nav {
+    font-size: 10px;
+  }
+  #nav {
+    margin-left: 4%;
+    .navbar-toggle {
+      right: 0;
+    }
+    ul {
+      float: left !important;
+    }
+  }
+  .carousel-indicators {
+    li,
+    .active {
+      margin: 0;
+      width: 8px;
+      height: 8px;
+    }
+  }
+  #carousel {
+    height: 250px;
+    img {
+      width: 160px;
+    }
+    p {
+      display: none;
+    }
+    .btn {
+      font-size: 10px;
+      width: 80px;
+    }
+  }
+}
+@media (max-width: 319px) {
+  %padding-right-and-left {
+    padding-right: 4%;
+    padding-left: 4%;
+  }
+  body {
+    font-size: 8px;
+  }
+  #logo {
+    display: none;
+  }
+  .navbar-collapse {
+    position: relative;
+    top: 50px;
+    height: 175px;
+    .navbar-nav {
+      a {
+        padding-top: 2.5px;
+        padding-bottom: 2.5px;
+      }
+    }
+  }
+  .my-nav {
+    font-size: 10px;
+  }
+  #nav {
+    margin-left: 4%;
+    .navbar-toggle {
+      right: 0;
+      background: url(../images/logo-small.png) no-repeat center !important;
+      width: 50px;
+      height: 30px;
+      right: 20px;
+      .icon-bar {
+        display: none;
+      }
+    }
+    ul {
+      float: left !important;
+    }
+  }
+  .carousel-indicators {
+    li,
+    .active {
+      margin: 0;
+      width: 8px;
+      height: 8px;
+    }
+  }
+  #carousel {
+    height: 250px;
+    img {
+      width: 160px;
+    }
+    p {
+      display: none;
+    }
+    .btn {
+      font-size: 10px;
+      width: 80px;
     }
   }
 }

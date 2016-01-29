@@ -7,11 +7,7 @@ body, .my-nav {
   padding-top: 0.5em;
   padding-bottom: 0.5em; }
 
-#footer, #header, #nav .container-fluid, .promo-gallery, .gallery {
-  padding-right: 16%;
-  padding-left: 16%; }
-
-#site-slogan, #myCarousel h3 {
+#footer, #header, #nav .container-fluid, #site-slogan, #myCarousel h3, .promo-gallery, .gallery {
   padding-right: 16%;
   padding-left: 16%; }
 
@@ -19,23 +15,53 @@ body {
   font-size: 14px;
   font-family: "Myriad Pro", sans-serif; }
 
+.clearfix::after {
+  content: "";
+  display: table;
+  clear: both; }
+
+hr {
+  margin: 0;
+  border: 0;
+  height: 1px;
+  background-image: linear-gradient(to right, rgba(33, 33, 33, 0), rgba(33, 33, 33, 0.75), rgba(33, 33, 33, 0)); }
+
 #footer {
   margin-top: 0.5em;
   color: #fff;
   background: #999281; }
-  #footer a {
-    color: inherit;
-    background: none; }
-    #footer a:hover {
-      text-decoration: underline; }
-  #footer .my-nav li + li:before {
-    content: "|";
-    margin: 0 3px;
-    display: inline-block;
-    vertical-align: middle; }
   #footer .copy {
     margin: 0;
-    text-align: right; }
+    text-align: center; }
+
+.footer {
+  text-align: center; }
+  .footer .btn-games {
+    color: white;
+    width: 250px;
+    position: relative;
+    top: -20px;
+    border-radius: 20px;
+    background: url(../images/btn-down.png) no-repeat center !important; }
+  .footer .footer-nav {
+    color: #442917;
+    text-align: center;
+    text-transform: uppercase; }
+    .footer .footer-nav ul {
+      padding: 0;
+      display: inline-block; }
+    .footer .footer-nav li {
+      display: inline-block; }
+    .footer .footer-nav li:nth-of-type(2) {
+      margin: 0 20px;
+      vertical-align: middle; }
+    .footer .footer-nav a {
+      color: inherit;
+      background: none; }
+      .footer .footer-nav a:hover {
+        color: #92907c;
+        font-style: italic;
+        text-decoration: none; }
 
 #header {
   color: #ffffff; }
@@ -67,8 +93,16 @@ body {
   border-radius: 0;
   border: 0;
   margin-bottom: 0; }
+  #nav .navbar-header {
+    position: absolute;
+    width: 100%; }
+  #nav .navbar-toggle {
+    position: relative;
+    float: right;
+    right: 70px; }
   #nav ul {
-    background: #999281; }
+    background: #999281;
+    margin-left: 0; }
   #nav a {
     color: inherit; }
     #nav a:hover {
@@ -133,8 +167,6 @@ body {
     text-align: center;
     font-size: 1.7em;
     color: #654e2d; }
-  #myCarousel .carousel-indicators {
-    position: relative; }
 
 .my-nav > li {
   display: inline-block;
@@ -146,14 +178,55 @@ body {
   padding-top: 10px;
   padding-bottom: 10px; }
   .promo-gallery .inner-elemets {
-    padding: 0;
+    padding: 0 2px;
     margin-bottom: 10px;
     height: 280px;
     text-align: center;
-    position: relative;
-    border: 1px solid red;
-    background-size: cover;
-    background-clip: content-box; }
+    position: relative; }
+    .promo-gallery .inner-elemets #books-section .thumbnail {
+      border: 0; }
+    .promo-gallery .inner-elemets #books-section img {
+      margin-left: 0;
+      width: 56px;
+      height: 64px;
+      border: 5px solid white;
+      position: relative;
+      float: left; }
+    .promo-gallery .inner-elemets iframe {
+      width: 90%;
+      border: 5px solid white;
+      position: relative;
+      float: left; }
+    .promo-gallery .inner-elemets .location-text {
+      margin-top: 10px;
+      font-family: "Georgia";
+      font-size: 12px;
+      color: #92907c;
+      position: relative;
+      float: left; }
+      .promo-gallery .inner-elemets .location-text p {
+        text-align: left; }
+        .promo-gallery .inner-elemets .location-text p span {
+          text-transform: uppercase; }
+        .promo-gallery .inner-elemets .location-text p time {
+          color: #442917; }
+    .promo-gallery .inner-elemets .inner-elemets-title {
+      text-align: left;
+      font-size: 1.05em;
+      padding-left: 2px;
+      color: #d2ceaf;
+      text-transform: uppercase; }
+    .promo-gallery .inner-elemets .thumbnail {
+      margin-bottom: 0;
+      background-color: inherit; }
+      .promo-gallery .inner-elemets .thumbnail .game-info-aside {
+        text-align: left;
+        padding-left: 15px;
+        padding-top: 5px;
+        width: 100%; }
+  .promo-gallery .middle {
+    margin-top: 15px;
+    margin-bottom: 15px; }
 
 .row {
   margin-left: 0;
@@ -194,6 +267,8 @@ body {
 .genres {
   border-bottom: 1px solid #ccc; }
 
+.game-info .thumbnail {
+  background-color: inherit; }
 .game-info .description {
   height: 50px;
   overflow: hidden; }
@@ -204,30 +279,33 @@ body {
   list-style-type: none;
   padding-left: 0; }
 
-.gallery .gallery-inner-element {
+.gallery-inner-element {
   height: 70px;
   padding: 0; }
-  .gallery .gallery-inner-element .thumbnail {
+  .gallery-inner-element .thumbnail {
     padding: 0;
     height: 70px;
-    border: 0; }
-    .gallery .gallery-inner-element .thumbnail img {
+    border: 0;
+    background-color: inherit; }
+    .gallery-inner-element .thumbnail img {
       margin-left: 0;
       width: 56px;
-      height: 64px; }
-    .gallery .gallery-inner-element .thumbnail a {
+      height: 64px;
+      border: 5px solid white; }
+    .gallery-inner-element .thumbnail a {
       padding: 0;
       margin-right: 15px;
       width: 56px;
       height: 64px;
       position: relative;
       float: left; }
-    .gallery .gallery-inner-element .thumbnail .game-info-aside {
+    .gallery-inner-element .thumbnail .game-info-aside {
       width: 90%; }
-      .gallery .gallery-inner-element .thumbnail .game-info-aside h5 {
+      .gallery-inner-element .thumbnail .game-info-aside h5 {
         margin: 0;
-        font-size: 12px; }
-    .gallery .gallery-inner-element .thumbnail .price-tag {
+        font-size: 12px;
+        color: #442917; }
+    .gallery-inner-element .thumbnail .price-tag {
       display: block;
       background: url(../images/price-tag.png) no-repeat bottom left;
       padding-left: 8px;
@@ -235,7 +313,7 @@ body {
       top: 12px;
       left: -8px;
       font-size: 10px; }
-      .gallery .gallery-inner-element .thumbnail .price-tag span {
+      .gallery-inner-element .thumbnail .price-tag span {
         display: block;
         margin-left: -6px;
         padding: 5px 5px 0 0;
@@ -243,17 +321,21 @@ body {
         color: #fff;
         text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5);
         font-style: normal; }
-.gallery .platform {
+
+.platform {
   font-family: "Georgia";
-  font-size: 12px; }
+  font-size: 12px;
+  color: #92907c;
+  font-style: italic; }
 
 .carousel-indicators {
-  background: url(../images/promo-gallery-background.jpg) no-repeat center;
-  width: 20%;
-  padding-top: 5px;
+  background: url(../images/promo-gallery-background.png) no-repeat center;
+  height: 35px;
+  position: relative;
+  bottom: 30px;
+  padding-top: 10px;
   left: 0;
-  margin: auto;
-  border-radius: 10px 10px 0 0; }
+  margin: auto; }
   .carousel-indicators li {
     background-color: #c1bfa6;
     border: 0; }
@@ -261,14 +343,36 @@ body {
     background-color: #675944;
     border-color: #c1bfa6; }
 
-@media (min-width: 480px) and (max-width: 768px) {
-  #footer, #header, #nav .container-fluid, .promo-gallery, .gallery {
+.carousel-inner {
+  bottom: 30px; }
+
+.rating {
+  text-align: center;
+  position: relative;
+  bottom: 20px;
+  font-size: 1.3em;
+  unicode-bidi: bidi-override;
+  direction: rtl; }
+
+.rating > span {
+  display: inline-block;
+  position: relative;
+  width: 1.1em; }
+
+.rating > span:hover:before,
+.rating > span:hover ~ span:before {
+  content: "\2605";
+  position: absolute; }
+
+@media (min-width: 480px) and (max-width: 767px) {
+  #footer, #header, #nav .container-fluid, #site-slogan, #myCarousel h3, .promo-gallery, .gallery {
     padding-right: 8%;
     padding-left: 8%; }
 
-  #site-slogan, #myCarousel h3 {
-    padding-right: 8%;
-    padding-left: 8%; }
+  .navbar-collapse {
+    position: relative;
+    top: 50px;
+    height: 250px; }
 
   body {
     font-size: 10px; }
@@ -283,27 +387,133 @@ body {
     #carousel .btn {
       font-size: 12px;
       width: 175px; } }
-@media (min-width: 320px) and (max-width: 479px) {
-  #footer, #header, #nav .container-fluid, .promo-gallery, .gallery {
+@media (min-width: 390px) and (max-width: 479px) {
+  #footer, #header, #nav .container-fluid, #site-slogan, #myCarousel h3, .promo-gallery, .gallery {
     padding-right: 4%;
     padding-left: 4%; }
 
-  #site-slogan, #myCarousel h3 {
-    padding-right: 4%;
-    padding-left: 4%; }
+  .navbar-collapse {
+    position: relative;
+    top: 50px;
+    height: 225px; }
 
   body {
     font-size: 8px; }
 
+  .my-nav {
+    font-size: 10px; }
+
   #nav {
     margin-left: 4%; }
+    #nav .navbar-toggle {
+      right: 0; }
     #nav ul {
       float: left !important; }
+
+  .carousel-indicators li,
+  .carousel-indicators .active {
+    margin: 0;
+    width: 10px;
+    height: 10px; }
 
   #carousel {
     height: 280px; }
     #carousel .btn {
       font-size: 10px;
       width: 100px; } }
+@media (min-width: 320px) and (max-width: 389px) {
+  #footer, #header, #nav .container-fluid, #site-slogan, #myCarousel h3, .promo-gallery, .gallery {
+    padding-right: 4%;
+    padding-left: 4%; }
+
+  body {
+    font-size: 8px; }
+
+  #logo {
+    width: 120px; }
+
+  .navbar-collapse {
+    position: relative;
+    top: 50px;
+    height: 175px; }
+    .navbar-collapse .navbar-nav a {
+      padding-top: 2.5px;
+      padding-bottom: 2.5px; }
+
+  .my-nav {
+    font-size: 10px; }
+
+  #nav {
+    margin-left: 4%; }
+    #nav .navbar-toggle {
+      right: 0; }
+    #nav ul {
+      float: left !important; }
+
+  .carousel-indicators li,
+  .carousel-indicators .active {
+    margin: 0;
+    width: 8px;
+    height: 8px; }
+
+  #carousel {
+    height: 250px; }
+    #carousel img {
+      width: 160px; }
+    #carousel p {
+      display: none; }
+    #carousel .btn {
+      font-size: 10px;
+      width: 80px; } }
+@media (max-width: 319px) {
+  #footer, #header, #nav .container-fluid, #site-slogan, #myCarousel h3, .promo-gallery, .gallery {
+    padding-right: 4%;
+    padding-left: 4%; }
+
+  body {
+    font-size: 8px; }
+
+  #logo {
+    display: none; }
+
+  .navbar-collapse {
+    position: relative;
+    top: 50px;
+    height: 175px; }
+    .navbar-collapse .navbar-nav a {
+      padding-top: 2.5px;
+      padding-bottom: 2.5px; }
+
+  .my-nav {
+    font-size: 10px; }
+
+  #nav {
+    margin-left: 4%; }
+    #nav .navbar-toggle {
+      right: 0;
+      background: url(../images/logo-small.png) no-repeat center !important;
+      width: 50px;
+      height: 30px;
+      right: 20px; }
+      #nav .navbar-toggle .icon-bar {
+        display: none; }
+    #nav ul {
+      float: left !important; }
+
+  .carousel-indicators li,
+  .carousel-indicators .active {
+    margin: 0;
+    width: 8px;
+    height: 8px; }
+
+  #carousel {
+    height: 250px; }
+    #carousel img {
+      width: 160px; }
+    #carousel p {
+      display: none; }
+    #carousel .btn {
+      font-size: 10px;
+      width: 80px; } }
 
 /*# sourceMappingURL=site.css.map */

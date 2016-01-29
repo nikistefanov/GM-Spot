@@ -18,7 +18,8 @@
     "jquery": "~2.1.4",
     "sammy": "~0.7.6",
     "system.js": "~0.18.17",
-    "toastr": "~2.1.2"
+    "toastr": "~2.1.2",
+    "five-star-rating": "~1.0.0"
   },
   "description": "Rent/Buy games, movies and books",
   "main": "",

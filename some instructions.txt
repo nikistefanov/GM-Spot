@@ -33,6 +33,7 @@ Answered:
 ## Как да използвам ID на продукта за да го отделя в нов адрес и там да дам повече инфо за него. Как да заредя темплейта с handlebars само за този даден продукт?
 
 ## za carousel background: url("image ot photoshop") no-repeat bottom center
+## да преместя бекграунда на хавър на текущ пейдж
 
 
 >>>TODO<<<

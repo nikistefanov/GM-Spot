@@ -114,7 +114,8 @@ hr {
     #nav .navbar-brand:hover {
       color: #eeeeba;
       font-style: italic;
-      background-color: #999281; }
+      background-color: #999281;
+      background: url(../images/current-bg-50.png) repeat-x 0 3px; }
   #nav .current li::before,
   #nav .current li::after {
     content: "";

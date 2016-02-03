@@ -130,6 +130,7 @@ hr {
       color: $hovered-color-text;
       font-style: italic;
       background-color: $navbar-background-color;
+      background: url(../images/current-bg-50.png) repeat-x 0 3px;
     }
   }
   .current {

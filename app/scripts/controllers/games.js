@@ -29,20 +29,31 @@ export default {
     var gameId = id;
     var query = new Parse.Query(Game);
 
-    return new Promise(function(resolve, reject) {
-
-      query.get(gameId)
-        .then(function(data) {
-          return converter.dbGameToGameVM(data);
-        })
-        .then(function(currentGame) {
-          var currentUserId = Parse.User.current() ? Parse.User.current().id : '';
-          currentGame.isOwner = currentUserId === currentGame.ownerId;
-          resolve({
-            game: currentGame
-          });
-        });
-    });
+    // return new Promise(function(resolve, reject) {
+    //
+    //   query.get(gameId)
+    //     .then(function(data) {
+    //       return converter.dbGameToGameVM(data);
+    //     })
+    //     .then(function(currentGame) {
+    //       var currentUserId = Parse.User.current() ? Parse.User.current().id : '';
+    //       currentGame.isOwner = currentUserId === currentGame.ownerId;
+    //       resolve({
+    //         game: currentGame
+    //       });
+    //     });
+    // });
+    return query.get(gameId)
+      .then(function(data) {
+        return converter.dbGameToGameVM(data);
+      })
+      .then(function(currentGame) {
+        var currentUserId = Parse.User.current() ? Parse.User.current().id : '';
+        currentGame.isOwner = currentUserId === currentGame.ownerId;
+        return {
+          game: currentGame
+        };
+      });
   },
   add: function(gameData) {
     var game = new Game();

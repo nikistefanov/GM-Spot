@@ -173,6 +173,10 @@ hr {
   display: inline-block;
   vertical-align: middle; }
 
+.games {
+  background: url(../images/games-backgorund.jpg) no-repeat !important;
+  height: 255px !important; }
+
 .promo-gallery {
   background: #eae8cf url(../images/promo-gallery-background.jpg) no-repeat;
   background-size: 100% 100%;

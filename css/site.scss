@@ -213,6 +213,10 @@ hr {
     vertical-align: middle;
   }
 }
+.games {
+  background: url(../images/games-backgorund.jpg) no-repeat !important;
+  height: 255px !important;
+}
 .promo-gallery {
   @extend %padding-right-and-left;
   background: $home-background url(../images/promo-gallery-background.jpg) no-repeat;

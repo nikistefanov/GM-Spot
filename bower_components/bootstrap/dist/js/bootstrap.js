@@ -733,10 +733,6 @@ if (typeof jQuery === 'undefined') {
 
     var $this   = $(this)
 
-    if (!($this.hasClass("add-product-platform"))) {
-      $("#site-slogan").toggle();
-    }
-
     if (!$this.attr('data-target')) e.preventDefault()
 
     var $target = getTargetFromTrigger($this)

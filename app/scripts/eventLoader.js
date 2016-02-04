@@ -46,6 +46,13 @@ export default {
       var value = $('#search')[0].value;
       document.location = document.location.origin + '#/search/' + value;
     });
+    $(document).on('click.bs.collapse.data-api', '[data-toggle="collapse"]', function (e) {
+      var $this   = $(this);
+
+      if (!($this.hasClass("add-product-platform"))) {
+        $("#site-slogan").toggle();
+      }
+    });
   },
 
   gameEvents: function($container) {

@@ -6,6 +6,7 @@ import templates from 'scripts/templates.js';
 import eventLoader from 'scripts/eventLoader.js';
 import notifier from 'scripts/notifier.js';
 import data from 'scripts/data.js';
+import games from 'templates/games.js';
 
 var containerId = '#main',
   $container = $(containerId);
@@ -28,6 +29,7 @@ var sammyApp = Sammy(containerId, function() {
   });
 
   this.get('#/games', function() {
+    games.loadGameTemplate();
     Promise.all([data.games.all(), templates.load('games')])
       .then(function(results) {
         var template = Handlebars.compile(results[1]),

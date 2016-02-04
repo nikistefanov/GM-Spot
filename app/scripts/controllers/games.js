@@ -30,19 +30,12 @@ export default {
     var query = new Parse.Query(Game);
 
     return new Promise(function(resolve, reject) {
-      query.find()
+
+      query.get(gameId)
         .then(function(data) {
-          return data.map(function(item) {
-            return converter.dbGameToGameVM(item);
-          });
+          return converter.dbGameToGameVM(data);
         })
-        .then(function(data) {
-          var currentGame;
-          data.map(function(item) {
-            if (item.id == gameId) {
-              currentGame = item;
-            }
-          });
+        .then(function(currentGame) {
           var currentUserId = Parse.User.current() ? Parse.User.current().id : '';
           currentGame.isOwner = currentUserId === currentGame.ownerId;
           resolve({

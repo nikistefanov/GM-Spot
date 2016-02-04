@@ -730,8 +730,12 @@ if (typeof jQuery === 'undefined') {
   // =================
 
   $(document).on('click.bs.collapse.data-api', '[data-toggle="collapse"]', function (e) {
-    $("#site-slogan").toggle();
+
     var $this   = $(this)
+
+    if (!($this.hasClass("add-product-platform"))) {
+      $("#site-slogan").toggle();
+    }
 
     if (!$this.attr('data-target')) e.preventDefault()
 

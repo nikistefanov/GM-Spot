@@ -13,7 +13,7 @@ export default {
       data.users.login(username, password)
         .then(function() {
           notifier.success("Logged in!");
-          location.reload();
+          document.location = document.location.origin;
         });
     });
 
@@ -36,7 +36,7 @@ export default {
       data.users.logout()
         .then(function() {
           notifier.success("Logged out!");
-          document.location = document.location.origin;
+          location.reload();
         });
     });
     $container.on('click', '#btn-search', function(ev) {

@@ -1,3 +1,4 @@
+
 <div id="myCarousel" class="carousel slide" data-ride="carousel">
   <ol class="carousel-indicators">
     <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
@@ -41,7 +42,7 @@
     <p class="inner-elemets-title">
       Site’s Recommendations
     </p>
-    {{#with games.[0]}}
+    {{#with games.[2]}}
       <div class="gallery-inner-element">
         <div class="thumbnail">
           <div class="row">
@@ -58,7 +59,7 @@
         </div>
       </div>
     {{/with}}
-    {{#with games.[0]}}
+    {{#with games.[1]}}
       <div class="gallery-inner-element middle">
         <div class="thumbnail">
           <div class="row">
@@ -114,7 +115,7 @@
     </div>
   </section>
   <section class="col-md-4 inner-elemets">
-    <div id="books-section">
+    <div class="comments-section">
       <p class="inner-elemets-title">
         Some words of wisdom
       </p>
@@ -141,19 +142,9 @@
   </p>
   <div class="footer-nav">
     <ul>
-      <li><a href="#">About us</a></li>
-      <li><a href="#">Contacts</a></li>
-      <li><a href="#">Location</a></li>
+      <li><a href="#/about-us">About us</a></li>
+      <li><a href="#/contacts">Contacts</a></li>
+      <li><a href="#/location">Location</a></li>
     </ul>
   </div>
 </div>
-
-<script type="text/javascript">
-  var carousel = document.getElementById('carousel');
-  document.getElementById('site-slogan-title').innerText = 'Your place for buying, selling or giving away games, movies and books!';
-  document.getElementById('site-slogan-text').innerText = 'Are you bored with your current games, sell them and buy new ones. Or just do a good deed and give some for free, make a present :)';
-  document.getElementById('site-slogan-btn').style.display = "inline-block";
-
-  //carousel.style.background = 'rgb(69,41,23)';
-  carousel.classList.remove("games");
-</script>

@@ -59,17 +59,30 @@
               <li><a href="#/home">Home</a></li>
               <li><a href="#/games">Games</a></li>
               <li><a href="#/movies">Movies</a></li>
-              <li><a href="#/books">Books</a></li>
+              <li><a href="#/books">Location</a></li>
             </ul>
           </div>
         </div>
       </nav>
       <div id="site-slogan" class="row">
         <h3 id="site-slogan-title">
+          Your place for buying, selling or giving away games, movies and books!
         </h3>
         <p id="site-slogan-text">
+          Are you bored with your current games, sell them and buy new ones.
         </p>
         <a id="site-slogan-btn" class="btn btn-success" href="#/games">Try now</a>
+      </div>
+    </div>
+    <div class='loader-top'>
+      <div class='loader'>
+        <div class='loader--dot'></div>
+        <div class='loader--dot'></div>
+        <div class='loader--dot'></div>
+        <div class='loader--dot'></div>
+        <div class='loader--dot'></div>
+        <div class='loader--dot'></div>
+        <div class='loader--text'></div>
       </div>
     </div>
     <div id="main">
@@ -91,10 +104,10 @@
       transpiler: 'babel',
       map: {
         babel: '/node_modules/babel-core/browser.js',
-        sammy: 'bower_components/sammy/lib/sammy.js',
+        sammy: '/bower_components/sammy/lib/sammy.js',
         jquery: '/bower_components/jquery/dist/jquery.js',
-        bootstrapUI: 'bower_components/bootstrap/dist/js/bootstrap.js',
-        handlebars: 'bower_components/handlebars/handlebars.js'
+        bootstrapUI: '/bower_components/bootstrap/dist/js/bootstrap.js',
+        handlebars: '/bower_components/handlebars/handlebars.js'
       }
     });
     System.import('app.js');

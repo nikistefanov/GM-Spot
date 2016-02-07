@@ -6,7 +6,7 @@ import templates from 'scripts/templates.js';
 import eventLoader from 'scripts/eventLoader.js';
 import notifier from 'scripts/notifier.js';
 import data from 'scripts/data.js';
-import games from 'templates/games.js';
+import templatesFunctionality from 'templates/templatesFunctionality.js';
 
 var containerId = '#main',
   $container = $(containerId);
@@ -17,8 +17,10 @@ var sammyApp = Sammy(containerId, function() {
   });
 
   this.get('#/home', function() {
+    templatesFunctionality.loadHomeTemplate();
     Promise.all([data.games.all(), templates.load('home')])
       .then(function(results) {
+        $('.loader-top').hide();
         var template = Handlebars.compile(results[1]),
           html = template(results[0]);
 
@@ -29,9 +31,10 @@ var sammyApp = Sammy(containerId, function() {
   });
 
   this.get('#/games', function() {
-    games.loadGameTemplate();
+    templatesFunctionality.loadGameTemplate();
     Promise.all([data.games.all(), templates.load('games')])
       .then(function(results) {
+        $('.loader-top').hide();
         var template = Handlebars.compile(results[1]),
           html = template(results[0]);
 
@@ -42,10 +45,12 @@ var sammyApp = Sammy(containerId, function() {
   });
 
   this.get('#/games/game-info/:id', function(context) {
+    templatesFunctionality.loadGameInfoTemplate();
     var id = context.params.id;
 
     Promise.all([data.games.get(id), templates.load('game-info')])
       .then(function(results) {
+        $('.loader-top').hide();
         var template = Handlebars.compile(results[1]),
           html = template(results[0]);
 

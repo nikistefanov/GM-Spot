@@ -190,7 +190,11 @@ hr {
   .btn-success {
     width: 250px;
     border-radius: 20px;
+    border: 0;
     background: url(../images/home-button-background.png) no-repeat center !important;
+    &:hover {
+      border-bottom: 1px solid green;
+    }
   }
 }
 #carousel {

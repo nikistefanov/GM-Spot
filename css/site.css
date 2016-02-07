@@ -158,7 +158,10 @@ hr {
   #site-slogan .btn-success {
     width: 250px;
     border-radius: 20px;
+    border: 0;
     background: url(../images/home-button-background.png) no-repeat center !important; }
+    #site-slogan .btn-success:hover {
+      border-bottom: 1px solid green; }
 
 #carousel {
   background: #452917;

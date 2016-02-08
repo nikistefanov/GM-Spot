@@ -2,7 +2,7 @@
 // version: 0.7.6
 
 // Sammy.js / http://sammyjs.org
-import 'jquery'
+// import 'jquery';
 
 (function(factory){
   // Support module loading scenarios

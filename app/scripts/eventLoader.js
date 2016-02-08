@@ -12,7 +12,7 @@ export default {
 
       data.users.login(username, password)
         .then(function() {
-          notifier.success("Logged in!");
+          toastr.success('Logged in!');
           document.location = document.location.origin;
         });
     });
@@ -25,7 +25,7 @@ export default {
 
       data.users.register(username, password)
         .then(function() {
-          notifier.success("Registered!");
+          toastr.success('Registered!');
           document.location = document.location.origin;
         });
     });
@@ -35,7 +35,7 @@ export default {
     $container.on('click', '#btn-logout', function(ev) {
       data.users.logout()
         .then(function() {
-          notifier.success("Logged out!");
+          toastr.success('Logged out!');
           location.reload();
         });
     });
@@ -53,8 +53,14 @@ export default {
         $("#site-slogan").toggle();
       }
     });
-  },
+    $(document).on('click', '#btn-txtarea', function(ev) {
+      ev.stopPropagation();
+      ev.preventDefault();
 
+      var value = $('#txtarea').val();
+      $('#user-comment p').text(value);
+    });
+  },
   gameEvents: function($container) {
     $container.on('click', '#btn-add-game', function(ev) {
       var genres = [];
@@ -73,9 +79,13 @@ export default {
         owner: Parse.User.current()
       };
 
+      gameData.forEach((key) => {
+        validate.ifUndefined(gameData[key]);
+      });
+
       data.games.add(gameData)
         .then(function(data) {
-          notifier.success("Game added.");
+          toastr.success('Game added.');
           location.reload();
         });
     });
@@ -87,11 +97,55 @@ export default {
       var gameId = $(ev.target).closest('div').attr('data-game-id');
       data.games.remove(gameId)
         .then(function(data) {
-          notifier.success('Game removed.');
+          toastr.success('Game removed.');
           document.location = document.location.href = '#/games';
         })
         .catch(function(err) {
-          notifier.err(err);
+          toastr.error(err);
+        });
+    });
+  },
+  movieEvents: function($container) {
+    $container.on('click', '#btn-add-movie', function(ev) {
+      var genres = [];
+
+      $(".genres-checkbox:checked").each(function() {
+        genres.push($(this).val());
+      });
+
+      var movieData = {
+        title: $('#tb-movie-title').val(),
+        year: $('#tb-movie-year').val(),
+        price: $('#tb-movie-price').val(),
+        img: $('#basic-url').val(),
+        description: $('#tb-movie-description').val(),
+        genres: genres,
+        owner: Parse.User.current()
+      };
+
+      movieData.forEach((key) => {
+        validate.ifUndefined(movieData[key]);
+      });
+
+      data.movies.add(movieData)
+        .then(function(data) {
+          toastr.success('Movie added.');
+          location.reload();
+        });
+    });
+
+    $container.on('click', '#btn-delete-movie', function(ev) {
+      ev.stopPropagation();
+      ev.preventDefault();
+
+      var movieId = $(ev.target).closest('div').attr('data-movie-id');
+      data.movies.remove(movieId)
+        .then(function(data) {
+          toastr.success('Movie removed.');
+          document.location = document.location.href = '#/movies';
+        })
+        .catch(function(err) {
+          toastr.error(err);
         });
     });
   }

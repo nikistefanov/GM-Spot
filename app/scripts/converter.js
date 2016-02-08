@@ -11,5 +11,18 @@ export default {
       genres: dbGame.get('genres'),
       ownerId: owner ? owner.id : null
     };
+  },
+  dbMovieToMovieVM: function(dbMovie) {
+    var owner = dbMovie.get('owner');
+    return {
+      id: dbMovie.id,
+      title: dbMovie.get('title'),
+      year: dbMovie.get('year'),
+      price: dbMovie.get('price'),
+      img: dbMovie.get('img'),
+      description: dbMovie.get('description'),
+      genres: dbMovie.get('genres'),
+      ownerId: owner ? owner.id : null
+    };
   }
 };

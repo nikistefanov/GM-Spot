@@ -1,8 +1,8 @@
-{{#game}}
+{{#movie}}
   <div class="breadcrumb-and-search row">
     <ol class="breadcrumb">
       <li><a href="#/home">Home</a></li>
-      <li><a href="#/games">Games</a></li>
+      <li><a href="#/movies">Movies</a></li>
       <li class="active">{{title}}</li>
     </ol>
   </div>
@@ -11,17 +11,17 @@
     <div class="left-section col-lg-8 row">
       <div class="thumbnail">
         <div class="row">
-          <img class="" src="{{img}}" alt="game-poster">
-          <div class="product-description" data-game-id="{{id}}">
+          <img class="" src="{{img}}" alt="movie-poster">
+          <div class="product-description" data-movie-id="{{id}}">
             <h5>{{title}}</h5>
             <p>
               <span>Price: <b>{{price}} €</b></span>
               {{#if isOwner}}
                 <p>
-                  <button id="btn-delete-game" class="btn btn-danger" name="button">Delete</button>
+                  <button id="btn-delete-movie" class="btn btn-danger" name="button">Delete</button>
                 </p>
               {{else}}
-                <p><a href="#/games/{{id}}" id="btn-buy-game" class="btn btn-primary" name="button">Buy</a></p>
+                <p><a href="#/movies/{{id}}" id="btn-buy-movie" class="btn btn-primary" name="button">Buy</a></p>
               {{/if}}
             </p>
             <ul>Genres:
@@ -30,8 +30,8 @@
               {{/each}}
             </ul>
             <p>
-              <span>For:
-                <strong>{{platform}}</strong>
+              <span>From:
+                <strong>{{year}}</strong>
               </span>
             </p>
             <p class="description">{{description}}</p>
@@ -57,7 +57,7 @@
       </p>
       <div class="comments">
         <p>
-          If you haven't already played {{title}}, now is your chance to experience the adventure on {{platform}} with a shiny experience!
+          If you haven't already watched {{title}}, now is your chance!
         </p>
       </div>
       <div id="user-comment" class="comments">
@@ -67,4 +67,4 @@
       </div>
     </div>
   </div>
-{{/game}}
+{{/movie}}

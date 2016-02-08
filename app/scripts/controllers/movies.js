@@ -1,16 +1,16 @@
 import converter from 'scripts/converter.js';
 import data from 'scripts/data.js';
 
-var Game = Parse.Object.extend("Game");
+var Movie = Parse.Object.extend("Movie");
 
 export default {
   all: function() {
-    var query = new Parse.Query(Game);
+    var query = new Parse.Query(Movie);
     return new Promise(function(resolve, reject) {
       query.find()
         .then(function(data) {
           return data.map(function(item) {
-            return converter.dbGameToGameVM(item);
+            return converter.dbMovieToMovieVM(item);
           });
         })
         .then(function(data) {
@@ -20,42 +20,42 @@ export default {
             return item;
           });
           resolve({
-            games: data
+            movies: data
           });
         });
     });
   },
   get: function(id) {
-    var gameId = id;
-    var query = new Parse.Query(Game);
-    return query.get(gameId)
+    var movieId = id;
+    var query = new Parse.Query(Movie);
+    return query.get(movieId)
       .then(function(data) {
-        return converter.dbGameToGameVM(data);
+        return converter.dbMovieToMovieVM(data);
       })
-      .then(function(currentGame) {
+      .then(function(currentMovie) {
         var currentUserId = Parse.User.current() ? Parse.User.current().id : '';
-        currentGame.isOwner = currentUserId === currentGame.ownerId;
+        currentMovie.isOwner = currentUserId === currentMovie.ownerId;
         return {
-          game: currentGame
+          movie: currentMovie
         };
       });
   },
-  add: function(gameData) {
-    var game = new Game();
+  add: function(movieData) {
+    var movie = new Movie();
 
-    ['title', 'platform', 'price', 'img', 'description', 'genres', 'owner'].forEach((key) => {
-      game.set(key, gameData[key]);
+    ['title', 'year', 'price', 'img', 'description', 'genres', 'owner'].forEach((key) => {
+      movie.set(key, movieData[key]);
     });
 
-    return game.save();
+    return movie.save();
   },
   remove: function(id) {
-    var query = new Parse.Query(Game);
+    var query = new Parse.Query(Movie);
 
     return new Promise(function(resolve, reject) {
       query.get(id)
-        .then(function(game) {
-          resolve(game.destroy());
+        .then(function(movie) {
+          resolve(movie.destroy());
         });
     });
   }

@@ -26,14 +26,13 @@ var sammyApp = Sammy(containerId, function() {
 
         $container.html(html);
       });
-
-    eventLoader.gameEvents($container);
   });
 
   this.get('#/games', function() {
     templatesFunctionality.loadGameTemplate();
     Promise.all([data.games.all(), templates.load('games')])
       .then(function(results) {
+        //console.log(results[0].games.length);
         $('.loader-top').hide();
         var template = Handlebars.compile(results[1]),
           html = template(results[0]);
@@ -58,6 +57,36 @@ var sammyApp = Sammy(containerId, function() {
       });
 
     eventLoader.gameEvents($container);
+  });
+
+  this.get('#/movies', function() {
+    templatesFunctionality.loadMovieTemplate();
+    Promise.all([data.movies.all(), templates.load('movies')])
+      .then(function(results) {
+        $('.loader-top').hide();
+        var template = Handlebars.compile(results[1]),
+          html = template(results[0]);
+
+        $container.html(html);
+      });
+
+    eventLoader.movieEvents($container);
+  });
+
+  this.get('#/movies/movie-info/:id', function(context) {
+    templatesFunctionality.loadMovieInfoTemplate();
+    var id = context.params.id;
+
+    Promise.all([data.movies.get(id), templates.load('movie-info')])
+      .then(function(results) {
+        $('.loader-top').hide();
+        var template = Handlebars.compile(results[1]),
+          html = template(results[0]);
+
+        $container.html(html);
+      });
+
+    eventLoader.movieEvents($container);
   });
 
   this.get('#/login', function() {

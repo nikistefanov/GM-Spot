@@ -15,22 +15,7 @@
   <script type="text/javascript" src="bower_components/jquery/dist/jquery.js"> -->
   </script>
   <style>
-    #gmaps-border {
-      padding: 5px;
-      border: 1px solid #e5e2c6;
-      width: 246px;
-      height: 171px;
-      background: #fff;
-      -webkit-box-shadow: 1px 1px 1px #fff;
-      -moz-box-shadow: 1px 1px 1px #fff;
-      box-shadow: 1px 1px 1px #fff;
-      margin-bottom: 12px;
-    }
-
-    #gmaps-container-1 {
-      width: 244px;
-      height: 171px;
-    }
+    
   </style>
 </head>
 
@@ -109,11 +94,11 @@
       baseURL: 'app',
       transpiler: 'babel',
       map: {
-        babel: 'node_modules/babel-core/browser.js',
-        sammy: 'bower_components/sammy/lib/sammy.js',
-        jquery: 'bower_components/jquery/dist/jquery.js',
-        bootstrapUI: 'bower_components/bootstrap/dist/js/bootstrap.js',
-        handlebars: 'bower_components/handlebars/handlebars.js'
+        babel: '/node_modules/babel-core/browser.js',
+        sammy: '/bower_components/sammy/lib/sammy.js',
+        jquery: '/bower_components/jquery/dist/jquery.js',
+        bootstrapUI: '/bower_components/bootstrap/dist/js/bootstrap.js',
+        handlebars: '/bower_components/handlebars/handlebars.js'
       }
     });
     System.import('app.js');

@@ -1,5 +1,3 @@
-
-
 export default {
   makeActive: function() {
 

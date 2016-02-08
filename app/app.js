@@ -1,7 +1,7 @@
-import 'sammy';
-import 'jquery';
-import 'bootstrapUI';
-import Handlebars from 'handlebars';
+// import 'sammy';
+// import 'jquery';
+// import 'bootstrapUI';
+// import Handlebars from 'handlebars';
 import templates from 'scripts/templates.js';
 import eventLoader from 'scripts/eventLoader.js';
 import notifier from 'scripts/notifier.js';

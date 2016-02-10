@@ -1,66 +1,12 @@
 import data from 'scripts/data.js';
 import notifier from 'scripts/notifier.js';
+import validate from 'scripts/validate.js';
 
+var CONSTANTS = {
+  PRODUCT_MIN_LENGTH: 3,
+};
 
 export default {
-  loginPageEvents: function($container) {
-    $container.on('click', '#btn-login', function(ev) {
-      ev.stopPropagation();
-      ev.preventDefault();
-      var username = $('#input-username')[0].value;
-      var password = $('#input-password')[0].value;
-
-      data.users.login(username, password)
-        .then(function() {
-          toastr.success('Logged in!');
-          document.location = document.location.origin;
-        });
-    });
-
-    $container.on('click', '#btn-reg', function(ev) {
-      ev.stopPropagation();
-      ev.preventDefault();
-      var username = $('#input-username')[0].value,
-        password = $('#input-password')[0].value;
-
-      data.users.register(username, password)
-        .then(function() {
-          toastr.success('Registered!');
-          document.location = document.location.origin;
-        });
-    });
-  },
-
-  navigationEvents: function($container) {
-    $container.on('click', '#btn-logout', function(ev) {
-      data.users.logout()
-        .then(function() {
-          toastr.success('Logged out!');
-          location.reload();
-        });
-    });
-    $container.on('click', '#btn-search', function(ev) {
-      ev.stopPropagation();
-      ev.preventDefault();
-
-      var value = $('#search')[0].value;
-      document.location = document.location.origin + '#/search/' + value;
-    });
-    $(document).on('click.bs.collapse.data-api', '[data-toggle="collapse"]', function(e) {
-      var $this = $(this);
-
-      if (!($this.hasClass("add-product-platform"))) {
-        $("#site-slogan").toggle();
-      }
-    });
-    $(document).on('click', '#btn-txtarea', function(ev) {
-      ev.stopPropagation();
-      ev.preventDefault();
-
-      var value = $('#txtarea').val();
-      $('#user-comment p').text(value);
-    });
-  },
   gameEvents: function($container) {
     $container.on('click', '#btn-add-game', function(ev) {
       var genres = [];
@@ -79,13 +25,16 @@ export default {
         owner: Parse.User.current()
       };
 
-      gameData.forEach((key) => {
-        validate.ifUndefined(gameData[key]);
+      $.each(gameData, function(index, value) {
+        validate.ifUndefined(value);
+        if (!(index == 'genres' || index == 'platform' || index == 'price')) {
+          validate.valueMinLength(value, CONSTANTS.PRODUCT_MIN_LENGTH, index);
+        }
       });
 
       data.games.add(gameData)
         .then(function(data) {
-          toastr.success('Game added.');
+          notifier.success('Game added.');
           location.reload();
         });
     });
@@ -97,11 +46,38 @@ export default {
       var gameId = $(ev.target).closest('div').attr('data-game-id');
       data.games.remove(gameId)
         .then(function(data) {
-          toastr.success('Game removed.');
+          notifier.success('Game removed.');
           document.location = document.location.href = '#/games';
         })
         .catch(function(err) {
-          toastr.error(err);
+          notifier.error(err);
+        });
+    });
+  },
+  loginPageEvents: function($container) {
+    $container.on('click', '#btn-login', function(ev) {
+      ev.stopPropagation();
+      ev.preventDefault();
+      var username = $('#input-username')[0].value;
+      var password = $('#input-password')[0].value;
+
+      data.users.login(username, password)
+        .then(function() {
+          notifier.success('Logged in!');
+          document.location = document.location.origin;
+        });
+    });
+
+    $container.on('click', '#btn-reg', function(ev) {
+      ev.stopPropagation();
+      ev.preventDefault();
+      var username = $('#input-username')[0].value,
+        password = $('#input-password')[0].value;
+
+      data.users.register(username, password)
+        .then(function() {
+          notifier.success('Registered!');
+          document.location = document.location.origin;
         });
     });
   },
@@ -123,13 +99,16 @@ export default {
         owner: Parse.User.current()
       };
 
-      movieData.forEach((key) => {
-        validate.ifUndefined(movieData[key]);
+      $.each(movieData, function(index, value) {
+        validate.ifUndefined(value);
+        if (!(index == 'genres' || index == 'price')) {
+          validate.valueMinLength(value, CONSTANTS.PRODUCT_MIN_LENGTH, index);
+        }
       });
 
       data.movies.add(movieData)
         .then(function(data) {
-          toastr.success('Movie added.');
+          notifier.success('Movie added.');
           location.reload();
         });
     });
@@ -141,12 +120,46 @@ export default {
       var movieId = $(ev.target).closest('div').attr('data-movie-id');
       data.movies.remove(movieId)
         .then(function(data) {
-          toastr.success('Movie removed.');
+          notifier.success('Movie removed.');
           document.location = document.location.href = '#/movies';
         })
         .catch(function(err) {
-          toastr.error(err);
+          notifier.error(err);
         });
+    });
+  },
+  navigationEvents: function($container) {
+    $container.on('click', '#btn-logout', function(ev) {
+      data.users.logout()
+        .then(function() {
+          notifier.success('Logged out!');
+          location.reload();
+        });
+    });
+    $container.on('click', '#btn-search', function(ev) {
+      ev.stopPropagation();
+      ev.preventDefault();
+
+      var value = $('#search').val();
+      //document.location = document.location.origin + '#/search/' + value;
+      document.location = document.location.origin;
+    });
+  },
+  collapseEventes: function($container) {
+    $(document).on('click', '#burger', function(ev) {
+      var $this = $(this);
+
+      if (!($this.hasClass("add-product-platform"))) {
+        $("#site-slogan").toggle();
+      }
+    });
+    $container.on('click', '#btn-txtarea', function(ev) {
+      ev.stopPropagation();
+      ev.preventDefault();
+
+      var value = $('#txtarea').val();
+      $('#user-comment p').text(value);
+      $('#txtarea').val("");
     });
   }
 };

@@ -1,4 +1,12 @@
+@media (min-width: 1024px) {
+  .user-comment-section {
+    margin-bottom: 30px;
+  }
+}
 @media (min-width: 768px) {
+  #nav {
+    margin-left: 16%;
+  }
   #main {
     .product-info {
       .left-section {
@@ -12,9 +20,9 @@
           }
           button {
             position: relative;
-            bottom: 3px;
+            bottom: 50px;
             height: 30px;
-            left: 350px;
+            left: 330px;
             color: white;
             border-radius: 20px !important;
             background: url(../images/search-btn.png) no-repeat center !important;
@@ -28,6 +36,11 @@
           }
         }
       }
+    }
+  }
+  .footer {
+    .comments {
+      width: 33% !important;
     }
   }
   .breadcrumb-and-search {
@@ -48,7 +61,8 @@
       .left-section {
         .user-comment-section {
           button {
-            left: 200px;
+            bottom: 50px;
+            left: 180px;
           }
         }
       }
@@ -61,14 +75,14 @@
   .navbar-collapse {
     position: relative;
     top: 50px;
-    height: 250px;
+    height: 220px;
   }
   body {
-    font-size: 10px;
+    font-size: 1em;
   }
   .product-info,
   .breadcrumb {
-    font-size: 12px;
+    font-size: 1.1em;
   }
   #nav {
     margin-left: 8%;
@@ -79,7 +93,7 @@
   #carousel {
     height: 350px;
     .btn {
-      font-size: 12px;
+      font-size: 1.1em;
       width: 175px;
     }
   }
@@ -90,11 +104,12 @@
       .left-section {
         .user-comment-section {
           #txtarea {
-            width: 250px;
+            width: 260px;
             height: 140px;
           }
           button {
-            left: 200px;
+            bottom: 50px;
+            left: 190px;
           }
           .input {
             height: 100%;
@@ -111,17 +126,14 @@
   .navbar-collapse {
     position: relative;
     top: 50px;
-    height: 225px;
-  }
-  body {
-    font-size: 8px;
+    height: 220px;
   }
   .product-info,
   .breadcrumb {
-    font-size: 12px;
+    font-size: 1.1em;
   }
   .my-nav {
-    font-size: 10px;
+    font-size: 1.1em;
   }
   #nav {
     margin-left: 4%;
@@ -143,7 +155,7 @@
   #carousel {
     height: 280px;
     .btn {
-      font-size: 10px;
+      font-size: 0.9em;
       width: 100px;
     }
   }
@@ -154,11 +166,12 @@
       .left-section {
         .user-comment-section {
           #txtarea {
-            width: 180px;
+            width: 190px;
             height: 140px;
           }
           button {
-            left: 130px;
+            bottom: 50px;
+            left: 120px;
           }
           .input {
             height: 100%;
@@ -182,11 +195,11 @@
     padding-left: 4%;
   }
   body {
-    font-size: 8px;
+    font-size: 0.8em;
   }
   .product-info,
   .breadcrumb {
-    font-size: 12px;
+    font-size: 1.1em;
   }
   #logo {
     width: 120px;
@@ -203,12 +216,12 @@
     }
   }
   .my-nav {
-    font-size: 10px;
+    font-size: 1em;
   }
   #nav {
     margin-left: 4%;
     .navbar-toggle {
-      right: 0;
+      right: 0 !important;
     }
     ul {
       float: left !important;
@@ -231,7 +244,7 @@
       display: none;
     }
     .btn {
-      font-size: 10px;
+      font-size: 1em;
       width: 80px;
     }
   }
@@ -242,11 +255,11 @@
     padding-left: 4%;
   }
   body {
-    font-size: 8px;
+    font-size: 0.8em;
   }
   .product-info,
   .breadcrumb {
-    font-size: 10px;
+    font-size: 1em;
   }
   #logo {
     display: none;
@@ -263,7 +276,7 @@
     }
   }
   .my-nav {
-    font-size: 10px;
+    font-size: 1em;
   }
   #nav {
     margin-left: 4%;
@@ -298,7 +311,7 @@
       display: none;
     }
     .btn {
-      font-size: 10px;
+      font-size: 1em;
       width: 80px;
     }
   }

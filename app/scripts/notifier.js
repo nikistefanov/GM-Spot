@@ -4,6 +4,7 @@ export default {
     toastr.success(msg);
   },
   error: function(msg) {
+    //alert(msg);
     toastr.error(msg);
   }
 };

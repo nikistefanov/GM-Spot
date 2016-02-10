@@ -9,7 +9,9 @@ import data from 'scripts/data.js';
 import templatesFunctionality from 'templates/templatesFunctionality.js';
 
 var containerId = '#main',
-  $container = $(containerId);
+  $container = $(containerId),
+  $footer = $('#footer');
+
 
 var sammyApp = Sammy(containerId, function() {
   this.get('#/', function() {
@@ -26,6 +28,10 @@ var sammyApp = Sammy(containerId, function() {
 
         $container.html(html);
       });
+    templates.load('footer-home')
+      .then(function(templateHtml) {
+        $footer.html(templateHtml);
+      });
   });
 
   this.get('#/games', function() {
@@ -39,8 +45,12 @@ var sammyApp = Sammy(containerId, function() {
 
         $container.html(html);
       });
+    templates.load('footer')
+      .then(function(templateHtml) {
+        $footer.html(templateHtml);
+      });
 
-    eventLoader.gameEvents($container);
+
   });
 
   this.get('#/games/game-info/:id', function(context) {
@@ -56,7 +66,6 @@ var sammyApp = Sammy(containerId, function() {
         $container.html(html);
       });
 
-    eventLoader.gameEvents($container);
   });
 
   this.get('#/movies', function() {
@@ -69,8 +78,11 @@ var sammyApp = Sammy(containerId, function() {
 
         $container.html(html);
       });
+    templates.load('footer')
+      .then(function(templateHtml) {
+        $footer.html(templateHtml);
+      });
 
-    eventLoader.movieEvents($container);
   });
 
   this.get('#/movies/movie-info/:id', function(context) {
@@ -86,7 +98,20 @@ var sammyApp = Sammy(containerId, function() {
         $container.html(html);
       });
 
-    eventLoader.movieEvents($container);
+
+  });
+
+  this.get('#/location', function() {
+    templatesFunctionality.loadLocationTemplate();
+    templates.load('location')
+      .then(function(templateHtml) {
+        $('.loader-top').hide();
+        $container.html(templateHtml);
+      });
+    templates.load('footer')
+      .then(function(templateHtml) {
+        $footer.html(templateHtml);
+      });
   });
 
   this.get('#/login', function() {
@@ -95,7 +120,6 @@ var sammyApp = Sammy(containerId, function() {
         $container.html(templateHtml);
       });
 
-    eventLoader.loginPageEvents($container);
   });
 
   this.get('#/register', function() {
@@ -104,9 +128,8 @@ var sammyApp = Sammy(containerId, function() {
         $container.html(templateHtml);
       });
 
-    eventLoader.loginPageEvents($container);
-  });
 
+  });
 
   Promise.all([data.users.current(), templates.load('login-logout')])
     .then(function(results) {
@@ -115,7 +138,12 @@ var sammyApp = Sammy(containerId, function() {
 
       $('.user-nav').append(html);
     });
-  eventLoader.navigationEvents($('.user-nav'));
+
 });
 
+eventLoader.loginPageEvents($container);
+eventLoader.gameEvents($container);
+eventLoader.movieEvents($container);
+eventLoader.collapseEventes($container);
+eventLoader.navigationEvents($('.user-nav'));
 sammyApp.run('#/');

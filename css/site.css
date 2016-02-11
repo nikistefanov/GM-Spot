@@ -303,6 +303,9 @@ body, .my-nav {
     transform: translateX(230px); }
   95% {
     transform: translateX(0); } }
+.user-nav {
+  display: none !important; }
+
 body {
   font-size: 14px;
   font-family: "Myriad Pro", sans-serif; }

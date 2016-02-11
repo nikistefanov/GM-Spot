@@ -6,7 +6,7 @@ import templates from 'scripts/templates.js';
 import eventLoader from 'scripts/eventLoader.js';
 import notifier from 'scripts/notifier.js';
 import data from 'scripts/data.js';
-import templatesFunctionality from 'templates/templatesFunctionality.js';
+import templatesFunctionality from 'scripts/templatesFunctionality.js';
 
 var containerId = '#main',
   $container = $(containerId),
@@ -19,7 +19,7 @@ var sammyApp = Sammy(containerId, function() {
   });
 
   this.get('#/home', function() {
-    templatesFunctionality.loadHomeTemplate();
+    templatesFunctionality.homeTemplateFunctions.loadHomeTemplate();
     Promise.all([data.games.all(), templates.load('home')])
       .then(function(results) {
         $('.loader-top').hide();
@@ -35,7 +35,7 @@ var sammyApp = Sammy(containerId, function() {
   });
 
   this.get('#/games', function() {
-    templatesFunctionality.loadGameTemplate();
+    templatesFunctionality.gamesTemplateFunctions.loadGameTemplate();
     Promise.all([data.games.all(), templates.load('games')])
       .then(function(results) {
         //console.log(results[0].games.length);
@@ -54,7 +54,7 @@ var sammyApp = Sammy(containerId, function() {
   });
 
   this.get('#/games/game-info/:id', function(context) {
-    templatesFunctionality.loadGameInfoTemplate();
+    templatesFunctionality.gamesInfoTemplateFunctions.loadGameInfoTemplate();
     var id = context.params.id;
 
     Promise.all([data.games.get(id), templates.load('game-info')])
@@ -69,7 +69,7 @@ var sammyApp = Sammy(containerId, function() {
   });
 
   this.get('#/movies', function() {
-    templatesFunctionality.loadMovieTemplate();
+    templatesFunctionality.moviesTemplateFunctions.loadMovieTemplate();
     Promise.all([data.movies.all(), templates.load('movies')])
       .then(function(results) {
         $('.loader-top').hide();
@@ -86,7 +86,7 @@ var sammyApp = Sammy(containerId, function() {
   });
 
   this.get('#/movies/movie-info/:id', function(context) {
-    templatesFunctionality.loadMovieInfoTemplate();
+    templatesFunctionality.moviesInfoTemplateFunctions.loadMovieInfoTemplate();
     var id = context.params.id;
 
     Promise.all([data.movies.get(id), templates.load('movie-info')])
@@ -102,7 +102,7 @@ var sammyApp = Sammy(containerId, function() {
   });
 
   this.get('#/location', function() {
-    templatesFunctionality.loadLocationTemplate();
+    templatesFunctionality.locationTemplateFunctions.loadLocationTemplate();
     templates.load('location')
       .then(function(templateHtml) {
         $('.loader-top').hide();
@@ -141,9 +141,9 @@ var sammyApp = Sammy(containerId, function() {
 
 });
 
-eventLoader.loginPageEvents($container);
-eventLoader.gameEvents($container);
-eventLoader.movieEvents($container);
-eventLoader.collapseEventes($container);
-eventLoader.navigationEvents($('.user-nav'));
+eventLoader.loginPageEvents.loginPageEvents($container);
+eventLoader.gameEvents.gameEvents($container);
+eventLoader.movieEvents.movieEvents($container);
+eventLoader.collapseEventes.collapseEventes($container);
+eventLoader.navigationEvents.navigationEvents($('.user-nav'));
 sammyApp.run('#/');

@@ -90,26 +90,25 @@
       <p class="copy">&copy; GM-Spot by Nikolay Stefanov</p>
     </div>
   </div>
-
   <script src="node_modules/babel-core/browser.js"></script>
-  <script src="bower_components/system.js/dist/system.js"></script>
-  <script src="bower_components/jquery/dist/jquery.js"></script>
-  <script src="bower_components/toastr/toastr.js"></script>
-  <script src="bower_components/five-star-rating/js/dist/rating.min.js"></script>
-  <script src="bower_components/sammy/lib/sammy.js"></script>
-  <script type="text/babel">
-    System.config({
-      baseURL: 'app',
-      transpiler: 'babel',
-      map: {
-        babel: '/node_modules/babel-core/browser.js',
-        sammy: '/bower_components/sammy/lib/sammy.js',
-        jquery: '/bower_components/jquery/dist/jquery.js',
-        bootstrapUI: '/bower_components/bootstrap/dist/js/bootstrap.js',
-        handlebars: '/bower_components/handlebars/handlebars.js'
-      }
-    });
-    System.import('app.js');
-  </script>
-</body>
+    <script src="bower_components/system.js/dist/system.js"></script>
+    <script src="bower_components/jquery/dist/jquery.js"></script>
+    <script src="bower_components/toastr/toastr.js"></script>
+    <script src="bower_components/five-star-rating/js/dist/rating.min.js"></script>
+    <script src="bower_components/sammy/lib/sammy.js"></script>
+    <script type="text/babel">
+      System.config({
+        baseURL: 'app',
+        transpiler: 'babel',
+        map: {
+          babel: '/node_modules/babel-core/browser.js',
+          sammy: '/bower_components/sammy/lib/sammy.js',
+          jquery: '/bower_components/jquery/dist/jquery.js',
+          bootstrapUI: '/bower_components/bootstrap/dist/js/bootstrap.js',
+          handlebars: '/bower_components/handlebars/handlebars.js'
+        }
+      });
+      System.import('app.js');
+    </script>
+  </body>
 </html>

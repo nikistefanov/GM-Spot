@@ -45,12 +45,13 @@ var sammyApp = Sammy(containerId, function() {
 
         $container.html(html);
       });
-    templates.load('footer')
-      .then(function(templateHtml) {
-        $footer.html(templateHtml);
+    Promise.all([data.comments.all(), templates.load('footer')])
+      .then(function(results) {
+        var template = Handlebars.compile(results[1]),
+          html = template(results[0]);
+
+        $footer.html(html);
       });
-
-
   });
 
   this.get('#/games/game-info/:id', function(context) {
@@ -78,11 +79,13 @@ var sammyApp = Sammy(containerId, function() {
 
         $container.html(html);
       });
-    templates.load('footer')
-      .then(function(templateHtml) {
-        $footer.html(templateHtml);
-      });
+      Promise.all([data.comments.all(), templates.load('footer')])
+        .then(function(results) {
+          var template = Handlebars.compile(results[1]),
+            html = template(results[0]);
 
+          $footer.html(html);
+        });
   });
 
   this.get('#/movies/movie-info/:id', function(context) {
@@ -108,10 +111,13 @@ var sammyApp = Sammy(containerId, function() {
         $('.loader-top').hide();
         $container.html(templateHtml);
       });
-    templates.load('footer')
-      .then(function(templateHtml) {
-        $footer.html(templateHtml);
-      });
+      Promise.all([data.comments.all(), templates.load('footer')])
+        .then(function(results) {
+          var template = Handlebars.compile(results[1]),
+            html = template(results[0]);
+
+          $footer.html(html);
+        });
   });
 
   this.get('#/login', function() {
@@ -144,6 +150,7 @@ var sammyApp = Sammy(containerId, function() {
 eventLoader.loginPageEvents.loginPageEvents($container);
 eventLoader.gameEvents.gameEvents($container);
 eventLoader.movieEvents.movieEvents($container);
-eventLoader.collapseEventes.collapseEventes($container);
+eventLoader.collapseEvents.collapseEvents($container);
+eventLoader.commentsEvents.commentsEvents($container);
 eventLoader.navigationEvents.navigationEvents($('.user-nav'));
 sammyApp.run('#/');

@@ -22,7 +22,7 @@ export default {
   isValidString: function(value, name) {
     name = name || 'Value';
 
-    if (/[~`!#$%\^&*+=\-\[\]\\';,/{}|\\":<>\?]/g.test(value)) {
+    if (/[~`#$%\^&*+=\-\[\]/{}|:<>\?]/g.test(value)) {
       notifier.error(name + ' cannot contains any special symbols.');
       throw new Error();
     }

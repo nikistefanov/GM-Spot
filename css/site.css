@@ -383,6 +383,8 @@ hr {
     font-style: italic;
     margin: 0;
     text-align: center; }
+    #maker .copy strong {
+      color: #442917; }
 
 .footer-home {
   display: none; }
@@ -393,7 +395,7 @@ hr {
   padding-top: 10px;
   text-align: center; }
   .footer #footer-logo {
-    color: #92907c;
+    color: #442917;
     padding-left: 5px; }
     .footer #footer-logo img {
       height: 20px; }
@@ -411,7 +413,7 @@ hr {
     text-align: left;
     width: 100%; }
     .footer .comments p {
-      color: #92907c;
+      color: #442917;
       overflow: auto;
       padding-left: 5px; }
       .footer .comments p::first-letter {
@@ -422,6 +424,10 @@ hr {
     padding-left: 2px;
     text-align: left;
     text-transform: uppercase; }
+    .footer .comments-title span {
+      color: #442917;
+      font-size: .8em;
+      text-transform: none; }
   .footer .btn-games {
     background: url("../images/btn-down.png") no-repeat center !important;
     border-radius: 20px;
@@ -430,7 +436,7 @@ hr {
     top: -29px;
     width: 250px; }
   .footer .footer-nav {
-    color: #92907c;
+    color: #442917;
     text-align: center;
     text-transform: uppercase; }
     .footer .footer-nav ul {
@@ -611,7 +617,7 @@ hr {
     padding: 5px 0; }
     .product-info .left-section .thumbnail strong,
     .product-info .left-section .thumbnail b {
-      color: #92907c; }
+      color: #442917; }
     .product-info .left-section .thumbnail img {
       border: 5px solid #fff;
       float: left;
@@ -624,7 +630,7 @@ hr {
       .product-info .left-section .thumbnail .product-description button {
         border-radius: 20px; }
       .product-info .left-section .thumbnail .product-description ul {
-        color: #92907c;
+        color: #442917;
         list-style-type: none;
         padding: 0; }
         .product-info .left-section .thumbnail .product-description ul li {
@@ -726,7 +732,7 @@ hr {
         .promo-gallery .inner-elemets .location-text p span {
           text-transform: uppercase; }
         .promo-gallery .inner-elemets .location-text p time {
-          color: #92907c; }
+          color: #442917; }
     .promo-gallery .inner-elemets .inner-elemets-title {
       color: #d2ceaf;
       font-size: 1.05em;
@@ -756,12 +762,16 @@ hr {
       font-size: 12px;
       text-transform: uppercase; }
     .location-section .left-section .description {
-      color: #92907c;
+      color: #442917;
       font-size: 12px;
       text-transform: uppercase; }
     .location-section .left-section time,
     .location-section .left-section span {
       color: #92907c; }
+      .location-section .left-section time:hover,
+      .location-section .left-section span:hover {
+        font-weight: bold;
+        text-decoration: underline; }
   .location-section .right-section {
     padding: 0; }
     .location-section .right-section iframe {
@@ -835,7 +845,7 @@ hr {
     .gallery-inner-element .thumbnail .game-info-aside {
       width: 90%; }
       .gallery-inner-element .thumbnail .game-info-aside h5 {
-        color: #92907c;
+        color: #442917;
         font-size: 1em;
         margin: 0; }
     .gallery-inner-element .thumbnail .price-tag {

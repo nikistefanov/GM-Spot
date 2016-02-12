@@ -24,5 +24,13 @@ export default {
       genres: dbMovie.get('genres'),
       ownerId: owner ? owner.id : null
     };
+  },
+  dbCommentToCommentVM: function(dbComment) {
+    var owner = dbComment.get('owner');
+    return {
+      id: dbComment.id,
+      text: dbComment.get('text'),
+      date: dbComment.get('date')
+    };
   }
 };

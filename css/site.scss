@@ -57,6 +57,10 @@ hr {
     font-style: italic;
     margin: 0;
     text-align: center;
+
+    strong {
+      color: $custom-brown-text;
+    }
   }
 }
 
@@ -72,7 +76,7 @@ hr {
   text-align: center;
 
   #footer-logo {
-    color: $custom-gray-text;
+    color: $custom-brown-text;
     padding-left: 5px;
 
     img {
@@ -99,7 +103,7 @@ hr {
     width: 100%;
 
     p {
-      color: $custom-gray-text;
+      color: $custom-brown-text;
       overflow: auto;
       padding-left: 5px;
 
@@ -115,6 +119,12 @@ hr {
     padding-left: 2px;
     text-align: left;
     text-transform: uppercase;
+
+    span {
+      color: $custom-brown-text;
+      font-size: .8em;
+      text-transform: none;
+    }
   }
 
   .btn-games {
@@ -127,7 +137,7 @@ hr {
   }
 
   .footer-nav {
-    color: $custom-gray-text;
+    color: $custom-brown-text;
     text-align: center;
     text-transform: uppercase;
 
@@ -417,7 +427,7 @@ hr {
 
       strong,
       b {
-        color: $custom-gray-text;
+        color: $custom-brown-text;
       }
 
       img {
@@ -437,7 +447,7 @@ hr {
         }
 
         ul {
-          color: $custom-gray-text;
+          color: $custom-brown-text;
           list-style-type: none;
           padding: 0;
 
@@ -586,7 +596,7 @@ hr {
         }
 
         time {
-          color: $custom-gray-text;
+          color: $custom-brown-text;
         }
       }
     }
@@ -634,7 +644,7 @@ hr {
     }
 
     .description {
-      color: $custom-gray-text;
+      color: $custom-brown-text;
       font-size: $gallery-font-size;
       text-transform: uppercase;
     }
@@ -642,6 +652,11 @@ hr {
     time,
     span {
       color: $custom-gray-text;
+
+      &:hover {
+        font-weight: bold;
+        text-decoration: underline;
+      }
     }
   }
 
@@ -750,7 +765,7 @@ hr {
       width: 90%;
 
       h5 {
-        color: $custom-gray-text;
+        color: $custom-brown-text;
         font-size: 1em;
         margin: 0;
       }

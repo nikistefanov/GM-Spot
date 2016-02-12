@@ -1,0 +1,20 @@
+.rating {
+  bottom: 20px;
+  direction: rtl;
+  font-size: 1.3em;
+  position: relative;
+  text-align: center;
+  unicode-bidi: bidi-override;
+}
+
+.rating > span {
+  display: inline-block;
+  position: relative;
+  width: 1.1em;
+}
+
+.rating > span:hover:before,
+.rating > span:hover ~ span:before {
+  content: '\2605';
+  position: absolute;
+}

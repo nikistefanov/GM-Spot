@@ -5,7 +5,7 @@ export default {
     $(".navbar-nav a[href*=" + filename + "]").attr("id", "active");
 
     $('#site-slogan-title').text('Your place for buying, selling or giving away games and movies!');
-    $('#site-slogan-text').text('Are you bored with your current games, sell them and buy new ones.');
+    $('#site-slogan-text').text('Are you bored with your current games, sell them and buy new ones. Nam ac ligula purus. Sed malesuada consectetur pellentesque.');
     $('#site-slogan-btn').css("display", "inline-block");
 
     $('#carousel').removeClass('movies');

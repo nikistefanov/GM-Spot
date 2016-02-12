@@ -1,354 +1,446 @@
 @import 'variables';
 @import 'resets';
 @import 'media-queries';
+@import 'rating';
+@import 'loader';
+
 .user-nav {
   display:  none !important;
 }
+
 body {
   @extend %reset;
-  font-size: $font-size-original;
   font-family: $custom-font-family, sans-serif;
+  font-size: $font-size-original;
 }
+
 .clearfix::after {
-  content: "";
-  display: table;
   clear: both;
+  content: '';
+  display: table;
 }
+
 hr {
-  margin: 0;
+  background-image: linear-gradient(to right, $linear-gradient-first-color, $linear-gradient-second-color, $linear-gradient-third-color);
   border: 0;
   height: 1px;
-  background-image: linear-gradient(to right, rgba(33, 33, 33, 0), rgba(33, 33, 33, 0.75), rgba(33, 33, 33, 0));
+  margin: 0;
 }
+
 #wrapper {
   width: 100% !important;
 }
+
 #gmaps-border {
-  padding: 5px;
-  border: 1px solid #e5e2c6;
-  width: 246px;
-  height: 171px;
-  background: #fff;
-  -webkit-box-shadow: 1px 1px 1px #fff;
   -moz-box-shadow: 1px 1px 1px #fff;
+  -webkit-box-shadow: 1px 1px 1px #fff;
+  background: #fff;
+  border: 1px solid #e5e2c6;
   box-shadow: 1px 1px 1px #fff;
-  margin-bottom: 12px;
-}
-#gmaps-container-1 {
-  width: 244px;
   height: 171px;
+  margin-bottom: 12px;
+  padding: 5px;
+  width: 246px;
 }
+
+#gmaps-container-1 {
+  height: 171px;
+  width: 244px;
+}
+
 #maker {
   @extend %padding-right-and-left;
-  margin-top: 0.5em;
-  color: $thumbnail-title-color;
+  color: $custom-gray-text;
+  margin-top: .5em;
+
   .copy {
+    font-style: italic;
     margin: 0;
     text-align: center;
-    font-style: italic;
   }
 }
+
 .footer-home {
   display: none;
 }
+
 .footer {
   @extend %padding-right-and-left;
-  text-align: center;
   background: $footer-background-color !important;
   margin-bottom: 20px;
   padding-top: 10px;
+  text-align: center;
+
   #footer-logo {
+    color: $custom-gray-text;
     padding-left: 5px;
-    color: $thumbnail-title-color;
+
     img {
       height: 20px;
     }
+
     span {
       font-size: 1.4em;
     }
+
     p {
+      color: $custom-gray-text;
       font-style: italic;
-      color: $platform-text-color;
-      text-transform: capitalize;
       margin-top: 10px;
       padding-left: 0;
+      text-transform: capitalize;
     }
   }
+
   .comments {
-    width: 100%;
-    position: relative;
     float: left;
+    position: relative;
     text-align: left;
+    width: 100%;
+
     p {
-      padding-left: 5px;
+      color: $custom-gray-text;
       overflow: auto;
-      color: $thumbnail-title-color;
+      padding-left: 5px;
+
       &::first-letter {
         text-transform: capitalize;
       }
     }
   }
+
   .comments-title {
-    text-align: left;
+    color: $custom-gray-text !important;
     font-size: 1.05em;
     padding-left: 2px;
-    color: $platform-text-color !important;
+    text-align: left;
     text-transform: uppercase;
   }
+
   .btn-games {
-    color: white;
-    width: 250px;
+    background: url('../images/btn-down.png') no-repeat center !important;
+    border-radius: 20px;
+    color: #fff;
     position: relative;
     top: -29px;
-    border-radius: 20px;
-    background: url(../images/btn-down.png) no-repeat center !important;
+    width: 250px;
   }
+
   .footer-nav {
-    color: $thumbnail-title-color;
+    color: $custom-gray-text;
     text-align: center;
     text-transform: uppercase;
+
     ul {
-      padding: 0;
       display: inline-block;
+      padding: 0;
     }
+
     li {
       display: inline-block;
+
+      &:nth-of-type(2) {
+        margin: 0 20px;
+        vertical-align: middle;
+      }
     }
-    li:nth-of-type(2) {
-      margin: 0 20px;
-      vertical-align: middle;
-    }
+
     a {
-      color: inherit;
       background: none;
+      color: inherit;
+
       &:hover {
-        color: $platform-text-color;
+        color: $custom-gray-text;
         font-style: italic;
         text-decoration: none;
       }
     }
   }
 }
+
 #header {
   @extend %padding;
   @extend %padding-right-and-left;
-  color: #ffffff;
+  color: #fff;
+
   .pull-right {
     padding-right: 0;
   }
+
   .user-nav {
     text-align: right;
   }
+
   .my-nav {
     display: inline-block;
+
     li + li {
       margin-left: 10px;
     }
+
     a {
-      color: white;
+      color: #fff;
+
       &:hover {
         text-decoration: none;
       }
     }
+
     li {
+
       &:hover {
-        border-radius: 3px;
         background-color: rgba($navbar-background-color, .6);
+        border-radius: 3px;
       }
     }
+
     .badge {
-      opacity: 0.8;
+      opacity: .8;
     }
   }
 }
+
 #logo {
   margin: -5px 0 0;
 }
+
 #nav {
-  color: white;
   background: $navbar-background-color;
-  border-radius: 0;
   border: 0;
+  border-radius: 0;
+  color: #fff;
   margin-bottom: 0;
+
   .navbar-header {
     position: absolute;
     width: 100%;
   }
+
   .navbar-toggle {
-    position: relative;
     float: right;
+    position: relative;
     right: 70px;
   }
+
   ul {
     background: $navbar-background-color;
     margin-left: 0;
   }
+
   a {
     color: inherit;
+
     &:hover {
       text-decoration: none;
     }
   }
+
   li,
   .navbar-brand {
     text-transform: uppercase;
+
     &:hover {
       color: $hovered-color-text;
       font-style: italic;
     }
+
     #active {
+      background: url('../images/current-bg-50.png') repeat-x 0 3px;
+      background-color: $navbar-background-color;
       color: $hovered-color-text;
       font-style: italic;
-      background-color: $navbar-background-color;
-      background: url(../images/current-bg-50.png) repeat-x 0 3px;
     }
   }
+
   .current {
     li::before,
     li::after {
-      content: "";
-      display: block;
-      width: 100%;
-      height: 2.5px;
       background-color: $navbar-background-color-hovered;
+      content: '';
+      display: block;
+      height: 2.5px;
+      width: 100%;
     }
   }
-  .active:hover {
-    font-style: normal;
-    color: white;
-    background-color: $navbar-background-color;
+
+  .active {
+
+    &:hover {
+      background-color: $navbar-background-color;
+      color: #fff;
+      font-style: normal;
+    }
   }
+
   p {
     &:hover {
-      font-style: bold;
       color: inherit;
+      font-style: bold;
     }
   }
+
   .form-group {
     position: relative;
+
     > .glyphicon {
       position: absolute;
-      right: 0.5em;
-      top: 0.75em;
+      right: .5em;
+      top: .75em;
     }
   }
+
   .container-fluid {
     @extend %padding-right-and-left;
     padding-left: 20px;
   }
 }
-#btn-login, #btn-reg, #btn-buy-game, #btn-delete-game, #btn-buy-movie, #btn-delete-movie {
+
+#btn-login,
+#btn-reg,
+#btn-buy-game,
+#btn-delete-game,
+#btn-buy-movie,
+#btn-delete-movie {
   border-radius: 20px;
 }
-#btn-login, #btn-reg {
+
+#btn-login,
+#btn-reg {
   margin: 0 0 10px 20px;
 }
+
+#carousel {
+  background: $site-color;
+  height: 350px;
+}
+
 #site-slogan {
-  color: white;
   @extend %padding-right-and-left;
+  color: #fff;
   margin-top: 10px;
+
   h3,
   p {
-    width: 60%;
+    width: 70%;
   }
+
   h3 {
     font-size: $font-size-up;
     text-transform: uppercase;
   }
+
   p {
-    font-size: 1.2em;
+    font-size: 1em;
   }
+
   .btn-success {
-    width: 250px;
-    border-radius: 20px;
+    background: url('../images/home-button-background.png') no-repeat center !important;
     border: 0;
-    background: url(../images/home-button-background.png) no-repeat center !important;
+    border-radius: 20px;
+    width: 250px;
+
     &:hover {
-      border-bottom: 1px solid green;
+      border-bottom: 1px solid #0f0;
     }
   }
 }
-#carousel {
-  //background: $site-second-color-alpha, $site-first-color no-repeat;
-  background: $site-color;
-  height: 400px;
-}
+
 #myCarousel {
+  background: $my-carousel-background-color;
   height: 125px;
-  background: rgb(246, 246, 239);
+
   a {
-    color: black;
     background: rgba(246, 246, 239, 0);
+    color: #000;
   }
+
   h3 {
     @extend %padding-right-and-left;
-    text-align: center;
-    font-size: $font-size-up;
     color: $slogan-text-color;
+    font-size: $font-size-up;
+    text-align: center;
   }
 }
+
 #main {
-  background: url(../images/games-background-down.jpg) !important;
+  background: url('../images/games-background-down.jpg') !important;
 }
+
 .my-nav {
   @extend %reset;
+
   > li {
     display: inline-block;
     vertical-align: middle;
   }
 }
+
 .games {
-  background: url(../images/games-backgorund.jpg) no-repeat !important;
+  background: url('../images/games-backgorund.jpg') no-repeat !important;
   height: 255px !important;
 }
+
 .games-info {
-  background: url(../images/games-info-background.jpg) no-repeat !important;
+  background: url('../images/games-info-background.jpg') no-repeat !important;
   height: 255px !important;
 }
+
 .movies {
-  background: url(../images/movies-background.jpg) no-repeat !important;
+  background: url('../images/movies-background.jpg') no-repeat !important;
   height: 255px !important;
 }
+
 .movies-info {
-  background: url(../images/movies-info-background.jpg) no-repeat !important;
+  background: url('../images/movies-info-background.jpg') no-repeat !important;
   height: 255px !important;
 }
+
 .location {
-  background: url(../images/location-background.jpg) no-repeat !important;
+  background: url('../images/location-background.jpg') no-repeat !important;
   height: 255px !important;
 }
+
 .product-info {
   @extend %padding-right-and-left;
+
   p {
-    color: $platform-text-color;
+    color: $custom-gray-text;
   }
+
   .left-section {
     padding: 0;
+
     .thumbnail {
-      padding: 5px 0;
       background: none;
       border: 0;
+      padding: 5px 0;
+
       strong,
       b {
-        color: $thumbnail-title-color;
+        color: $custom-gray-text;
       }
+
       img {
-        width: 250px;
-        height: 280px;
-        border: 5px solid white;
-        position: relative;
-        margin-right: 20px;
+        border: 5px solid #fff;
         float: left;
+        height: 280px;
+        margin-right: 20px;
+        position: relative;
+        width: 250px;
       }
+
       .product-description {
         position: relative;
+
         button {
           border-radius: 20px;
         }
+
         ul {
-          color: $thumbnail-title-color;
+          color: $custom-gray-text;
           list-style-type: none;
           padding: 0;
+
           li {
             padding-left: 10px;
             text-transform: capitalize;
@@ -357,372 +449,411 @@ hr {
       }
     }
   }
+
   .right-section {
     padding: 5px 0 0 10px;
+
     .comments {
-      background: url(../images/comments.jpg);
-      background-size: 260px 250px;
+      background: url('../images/comments.jpg');
       background-repeat: no-repeat;
+      background-size: 260px 250px;
       height: 45vh;
+
       p {
+        overflow: auto;
         padding-left: 5px;
         width: 250px;
-        overflow: auto;
+
         &::first-letter {
-          text-transform: capitalize;
           padding-left: 5px;
+          text-transform: capitalize;
         }
       }
     }
   }
+
   .comments-title {
-    text-align: left;
+    color: $title-color;
     font-size: 1.05em;
     padding-left: 2px;
-    color: $inner-elemets-title-color;
+    text-align: left;
     text-transform: uppercase;
   }
+
   .user-comment-section {
+
     img {
-      margin-left: 0;
-      width: 56px;
-      height: 64px;
-      border: 5px solid white;
-      position: relative;
+      border: 5px solid #fff;
       float: left;
-    }
-    #txtarea {
-      margin-left: 10px;
-      border: 0;
-      background: none;
-      width: 250px;
-      height: 230px;
-    }
-    button {
-      display: block;
+      height: 64px;
+      margin-left: 0;
       position: relative;
+      width: 56px;
+    }
+
+    #txtarea {
+      background: none;
+      border: 0;
+      height: 230px;
+      margin-left: 10px;
+      width: 250px;
+    }
+
+    button {
+      background: url('../images/search-btn.png') no-repeat center !important;
+      border-radius: 20px !important;
       bottom: 30px;
+      color: #fff;
+      display: block;
       height: 30px;
       left: 250px;
-      color: white;
-      border-radius: 20px !important;
-      background: url(../images/search-btn.png) no-repeat center !important;
+      position: relative;
     }
+
     .input {
-      margin-left: 55px;
-      background: url(../images/comments-user2.jpg);
-      background-size: 260px 250px;
+      background: url('../images/comments-user2.jpg');
       background-repeat: no-repeat;
+      background-size: 260px 250px;
       height: 100%;
+      margin-left: 55px;
     }
   }
 }
+
 .promo-gallery {
   @extend %padding-right-and-left;
-  background: $home-background url(../images/promo-gallery-background.jpg) no-repeat;
+  background: $home-background url('../images/promo-gallery-background.jpg') no-repeat;
   background-size: 100% 100%;
-  padding-top: 10px;
+  margin-bottom: 20px;
   padding-bottom: 10px;
+  padding-top: 10px;
+
   .inner-elemets {
+    height: 280px;
+    margin-bottom: 10px;
     overflow: hidden;
     padding: 0 2px;
-    margin-bottom: 10px;
-    height: 280px;
-    text-align: center;
     position: relative;
+    text-align: center;
+
     .comments-section {
       .thumbnail {
         border: 0;
+
         .books {
-          background: url(../images/comments.jpg);
-          background-size: 260px 250px;
+          background: url('../images/comments.jpg');
           background-repeat: no-repeat;
+          background-size: 260px 250px;
           height: 100vh;
+
           p {
-            width: 180px;
             overflow: auto;
+            width: 180px;
           }
         }
       }
+
       img {
-        margin-left: 0;
-        width: 56px;
-        height: 64px;
-        border: 5px solid white;
-        position: relative;
+        border: 5px solid #fff;
         float: left;
+        height: 64px;
+        margin-left: 0;
+        position: relative;
+        width: 56px;
       }
     }
+
     iframe {
-      width: 90%;
-      border: 5px solid white;
-      position: relative;
+      border: 5px solid #fff;
       float: left;
+      position: relative;
+      width: 90%;
     }
+
     .location-text {
-      margin-top: 10px;
+      color: $custom-gray-text;
+      float: left;
       font-family: $gallery-font-family;
       font-size: $gallery-font-size;
-      color: $platform-text-color;
+      margin-top: 10px;
       position: relative;
-      float: left;
+
       p {
         text-align: left;
+
         span {
           text-transform: uppercase;
         }
+
         time {
-          color: $thumbnail-title-color;
+          color: $custom-gray-text;
         }
       }
     }
+
     .inner-elemets-title {
-      text-align: left;
+      color: $title-color;
       font-size: 1.05em;
       padding-left: 2px;
-      color: $inner-elemets-title-color;
+      text-align: left;
       text-transform: uppercase;
     }
+
     .thumbnail {
-      margin-bottom: 0;
       background-color: inherit;
+      margin-bottom: 0;
+
       .game-info-aside {
-        text-align: left;
         padding-left: 15px;
         padding-top: 5px;
+        text-align: left;
         width: 100%;
       }
     }
   }
+
   .middle {
-    margin-top: 15px;
     margin-bottom: 15px;
+    margin-top: 15px;
   }
 }
+
 .location-section {
   @extend %padding-right-and-left;
-  padding-top: 10px;
   padding-bottom: 10px;
+  padding-top: 10px;
+
   .left-section {
     padding: 0;
+
     .title {
+      color: $custom-gray-text;
       font-family: $gallery-font-family;
       font-size: $gallery-font-size;
-      color: $platform-text-color;
       text-transform: uppercase;
     }
+
     .description {
+      color: $custom-gray-text;
       font-size: $gallery-font-size;
-      color: $thumbnail-title-color;
       text-transform: uppercase;
     }
+
     time,
     span {
-      color: $platform-text-color;
+      color: $custom-gray-text;
     }
   }
+
   .right-section {
     padding: 0;
+
     iframe {
-      border: 5px solid white;
-      position: relative;
+      border: 5px solid #fff;
       float: left;
-      width: 100%;
       height: 300px;
+      position: relative;
+      width: 100%;
     }
   }
 }
+
 .row {
   margin-left: 0;
   margin-right: 0;
 }
+
 .panel-group {
-  width: 85%;
   margin: 10px auto 20px;
+  width: 85%;
+
   .panel-collapse {
+    border: 0;
     position: relative;
     text-align: center;
-    border: 0;
+
     span,
     input {
       border-radius: 0;
     }
+
     input {
       border-right: 0;
     }
+
     button {
-      position: relative;
       border-radius: 10px;
+      position: relative;
     }
   }
+
   .panel-heading {
-    text-align: center;
     border-radius: 10px;
+    text-align: center;
   }
 }
+
 #btn-add-game,
 #btn-add-movie {
-  background-color: #6BBE92;
+  background-color: $btn-add-product;
   border: 0;
-  padding: 10px 0;
-  text-align: center;
   color: #fff;
   font-weight: bold;
-  width: 50%;
   margin: 5px auto;
+  padding: 10px 0;
+  text-align: center;
+  width: 50%;
 }
+
 .checkbox-inline {
   input {
     vertical-align: middle;
   }
 }
+
 .genres {
   border-bottom: 1px solid #ccc;
 }
+
 .gallery {
   @extend %padding-right-and-left;
 }
+
 .gallery-inner-element {
-  margin-bottom: 16px;
   height: 70px;
+  margin-bottom: 16px;
   padding: 0;
+
   .thumbnail {
-    padding: 0;
-    height: 70px;
-    border: 0;
     background-color: inherit;
+    border: 0;
+    height: 70px;
+    padding: 0;
+
     img {
+      border: 5px solid #fff;
+      height: 64px;
       margin-left: 0;
       width: 56px;
-      height: 64px;
-      border: 5px solid white;
     }
+
     a {
-      padding: 0;
-      margin-right: 15px;
-      width: 56px;
-      height: 64px;
-      position: relative;
       float: left;
+      height: 64px;
+      margin-right: 15px;
+      padding: 0;
+      position: relative;
+      width: 56px;
     }
+
     .game-info-aside {
       width: 90%;
+
       h5 {
-        margin: 0;
+        color: $custom-gray-text;
         font-size: 1em;
-        color: $thumbnail-title-color;
+        margin: 0;
       }
     }
+
     .price-tag {
+      background: url('../images/price-tag.png') no-repeat bottom left;
       display: block;
-      background: url(../images/price-tag.png) no-repeat bottom left;
+      font-size: .8em;
+      left: -8px;
       padding-left: 8px;
       position: absolute;
       top: 12px;
-      left: -8px;
-      font-size: 0.8em;
+
       span {
+        color: #fff;
         display: block;
+        font-style: normal;
+        height: 31px;
         margin-left: -6px;
         padding: 5px 5px 0 0;
-        height: 31px;
-        color: #fff;
-        text-shadow: 1px 1px 1px rgba(0,0,0,0.5);
-        font-style: normal;
+        text-shadow: 1px 1px 1px rgba(0, 0, 0, .5);
       }
     }
   }
 }
+
 .platform {
+  color: $custom-gray-text;
   font-family: $gallery-font-family;
   font-size: $gallery-font-size;
-  color: $platform-text-color;
   font-style: italic;
 }
+
 .carousel-indicators {
-  background: url(../images/promo-gallery-background.png) no-repeat center;
-  //height: 30%;
-  height: 35px;
-  position: relative;
+  background: url('../images/promo-gallery-background.png') no-repeat center;
   bottom: 30px;
-  padding-top: 10px;
+  height: 35px;
   left: 0;
   margin: auto;
+  padding-top: 10px;
+  position: relative;
+
   li {
     background-color: $carousel-indicators-background-color;
     border: 0;
   }
+
   .active {
     background-color: $carousel-indicators-color;
     border-color: $carousel-indicators-background-color;
   }
 }
+
 .carousel-inner {
   bottom: 30px;
 }
-.rating {
-  text-align: center;
-  position: relative;
-  bottom: 20px;
-  font-size: 1.3em;
-  unicode-bidi: bidi-override;
-  direction: rtl;
-}
-.rating > span {
-  display: inline-block;
-  position: relative;
-  width: 1.1em;
-}
-.rating > span:hover:before,
-.rating > span:hover ~ span:before {
-  content: "\2605";
-  position: absolute;
-}
-#loading {
-  position: absolute;
-  display: block;
-  width: 100%;
-  height: 100%;
-  background: url(../images/loading.gif) no-repeat;
-  text-align: center;
-}
+
 #accordion {
   margin-top: 5px;
 }
+
 .breadcrumb-and-search {
   @extend %padding-right-and-left;
   background-color: $breadcrumb-and-search-background;
+
   .search {
     padding: 5px 0;
+
     input {
-      width: 150px;
+      border-radius: 20px !important;
       float: right;
-      border-radius: 20px !important;
       margin-right: 10px;
+      width: 150px;
     }
+
     button {
-      color: white;
+      background: url('../images/search-btn.png') no-repeat center !important;
       border-radius: 20px !important;
-      background: url(../images/search-btn.png) no-repeat center !important;
+      color: #fff;
     }
   }
+
   .breadcrumb {
-    padding: 8px 0;
     font-family: $custom-font-family, Sans-Serif;
     margin-bottom: 0;
+    padding: 8px 0;
+
     li + li:before {
-      content: ">>";
-      font-size: 0.8em;
+      content: '>>';
+      font-size: .8em;
       vertical-align: text-top;
     }
+
     a {
-      color: $platform-text-color;
+      color: $custom-gray-text;
       text-decoration: none;
       text-transform: uppercase;
     }
+
     .active {
+      color: $custom-gray-text;
       text-transform: uppercase;
-      color: $thumbnail-title-color;
     }
   }
 }

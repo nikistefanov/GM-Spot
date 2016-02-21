@@ -342,7 +342,7 @@ body, .my-nav {
     transform: translateX(0); } }
 body {
   font-family: "Myriad Pro", sans-serif;
-  font-size: 14px; }
+  font-size: 12px; }
 
 .clearfix::after {
   clear: both;
@@ -554,7 +554,7 @@ hr {
   #site-slogan p {
     width: 70%; }
   #site-slogan h3 {
-    font-size: 1.7em;
+    font-size: 1.6em;
     text-transform: uppercase; }
   #site-slogan p {
     font-size: 1em; }
@@ -574,7 +574,7 @@ hr {
     color: #000; }
   #myCarousel h3 {
     color: #654e2d;
-    font-size: 1.7em;
+    font-size: 1.6em;
     text-align: center; }
 
 #main {
